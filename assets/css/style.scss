@@ -33,14 +33,20 @@ body {
   color: #666;
 }
 
-// 3. Place all main content (paragraphs, headings) in the second column.
-.content-with-sidenotes > * {
+// 3. Explicitly place all paragraphs and headings into the second column.
+// This is more specific than using the universal '*' selector.
+.content-with-sidenotes > p,
+.content-with-sidenotes > h1,
+.content-with-sidenotes > h2,
+.content-with-sidenotes > h3,
+.content-with-sidenotes > h4,
+.content-with-sidenotes > ul,
+.content-with-sidenotes > ol {
   grid-column: 2;
 }
 
-// 4. ...BUT make sure our sidenotes go back into the first column!
-// This overrides the rule above for our specific .sidenote class.
-.content-with-sidenotes > .sidenote {
+// 4. Our original rule for sidenotes is perfect, no changes needed here.
+.sidenote {
   grid-column: 1;
 }
 
