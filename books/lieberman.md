@@ -1,3 +1,8 @@
+---
+layout: default
+title: "The Story of the Human Body"
+---
+
 This book begins with a puzzle. We live in paradoxical times for our bodies. On one hand, this is likely the healthiest era in human history. In many parts of the world, diseases that once killed in droves—smallpox, the plague, polio—have been conquered or quelled. We can reasonably expect our children to survive to adulthood, and for us to live into our dotage. Formerly life-threatening conditions like a broken leg or appendicitis are now easily remedied. Yet, on the other hand, we could be doing much better. A wave of chronic, preventable illnesses is sweeping the globe. These are not the ancient infectious scourges, but modern ailments: type 2 diabetes, heart disease, certain cancers, osteoporosis, but also a host of less deadly but debilitating troubles like lower back pain, anxiety, and myopia. These aren't just diseases of old age; they are increasingly appearing in middle-aged people. How can our time be both a golden age for health and a burgeoning crisis of chronic disease?
 
 {% include sidenote.html text="Modern health good. But new diseases rising. Why both at once?" %}
