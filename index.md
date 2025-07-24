@@ -13,3 +13,15 @@ This system works by using a Jekyll include. The include tag inserts a small pie
 
 On mobile devices, a two-column layout doesn't work well. Our CSS includes a special rule called a media query. If the screen is too narrow, it automatically switches to a single-column layout and styles the sidenote as a simple, indented quote above the paragraph.
 {% include sidenote.html text="Responsive & Mobile" %}
+
+
+## Book Notes
+
+Here you can find summaries and notes on various books.
+{% include sidenote.html text="Reading List" %}
+
+<p>
+  <ul>
+    <li><a href="{% link books/lieberman.md %}">Summary of "The Story of the Human Body"</a></li>
+  </ul>
+</p>
