@@ -1,0 +1,62 @@
+---
+---
+// The two "---" lines above are required by Jekyll to process the file.
+
+/* Basic body styling for readability */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 2rem;
+}
+.page-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Sidenote Layout CSS --- */
+
+// 1. Define the main content container with a grid layout.
+.content-with-sidenotes {
+  display: grid;
+  // Creates columns: 200px for notes, a 40px gap, and the rest for content.
+  grid-template-columns: 200px 1fr;
+  grid-column-gap: 40px;
+}
+
+// 2. Style and position the sidenote itself.
+.sidenote {
+  grid-column: 1; // Put this in the first column.
+  text-align: right;
+  font-size: 0.9em;
+  color: #666;
+}
+
+// 3. Place all main content (paragraphs, headings) in the second column.
+.content-with-sidenotes > * {
+  grid-column: 2;
+}
+
+// 4. ...BUT make sure our sidenotes go back into the first column!
+// This overrides the rule above for our specific .sidenote class.
+.content-with-sidenotes > .sidenote {
+  grid-column: 1;
+}
+
+// 5. Responsive: For small screens, stack everything.
+@media (max-width: 900px) {
+  .content-with-sidenotes {
+    display: block; // Go back to a normal, single-column flow.
+  }
+
+  .sidenote {
+    // Style the note as an indented block above its paragraph on mobile.
+    text-align: left;
+    margin: 1em 0;
+    padding: 1em;
+    font-style: italic;
+    background-color: #f8f8f8;
+    border-left: 5px solid #ccc;
+  }
+}
