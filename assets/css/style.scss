@@ -20,9 +20,9 @@ body {
 // 1. Define the main content container with a grid layout.
 .content-with-sidenotes {
   display: grid;
-  // Creates columns: 200px for notes, a 40px gap, and the rest for content.
   grid-template-columns: 200px 1fr;
   grid-column-gap: 40px;
+  align-items: start; // <<-- ADD THIS LINE
 }
 
 // 2. Style and position the sidenote itself.
