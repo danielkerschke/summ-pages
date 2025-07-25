@@ -24,6 +24,8 @@ body {
   grid-template-columns: 200px 1fr;
   grid-column-gap: 40px;
   align-items: start;
+  grid-auto-flow: row dense; // ADDED: back-fills holes so sidenotes align with their paragraphs
+
 }
 
 // 2. Place all headings across BOTH columns.

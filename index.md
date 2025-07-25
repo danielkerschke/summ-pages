@@ -19,8 +19,6 @@ On mobile devices, a two-column layout doesn't work well. Our CSS includes a spe
 Here you can find summaries and notes on various books.
 {% include sidenote.html text="Reading List" %}
 
-<p>
-  <ul>
-    <li><a href="{% link books/lieberman.md %}">Summary of "The Story of the Human Body"</a></li>
-  </ul>
-</p>
+<ul>
+  <li><a href="books/lieberman.html">Summary of "The Story of the Human Body"</a></li>
+</ul>
