@@ -4,22 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title | default: site.title }}</title>
-  
-  <!-- Loads the EB Garamond font from Google Fonts -->
+
+  <!-- Load the EB Garamond font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  
-  <!-- Links to your stylesheet using the robust relative_url method -->
+
+  <!-- Link to your stylesheet -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
   <div class="page-wrapper">
+
+    <!-- Build timestamp (top‑right corner) -->
+    <div class="deployment-info">
+      Last build: {{ site.time | date: "%Y-%m-%d %H:%M:%S %Z" }}
+    </div>
+
     <header>
       <h1>My Awesome Website</h1>
     </header>
 
-    <!-- The main wrapper that enables the two-column grid -->
+    <!-- Main wrapper enabling the two‑column grid -->
     <main class="content-with-sidenotes">
       {{ content }}
     </main>
