@@ -38,9 +38,9 @@ This sets up the book's central argument: we are caught in a feedback loop, a dy
 
 ## PART I - Apes and Humans
 
-This part of the book considers the first several million years of our lineage, tracing the major biological transformations that turned an ape‑like ancestor into the hunter‑gatherers of the genus *Homo*.
+This part of the book considers the first several million years of our lineage, tracing the major biological transformations that turned an ape‑like ancestor into the hunter-gatherers of the genus *Homo*.
 
-### [2 - Upstanding Apes](lieberman_2013/lieberman1.html)
+### [Lieberman, D. E. (2013). Ch. 2 - *Upstanding Apes.* In *The Story of the Human Body- Evolution, Health, and Disease.* Pantheon Books](lieberman1.html)
 
 This chapter explores the first and arguably most fundamental transition in human evolution—the shift to bipedalism. It examines the fossil evidence from our earliest ancestors, such as *Ardipithecus ramidus* ("Ardi"), to understand the anatomical changes in the feet, hips, and spine that made walking on two legs possible. The central argument is that bipedalism was not an end in itself but an adaptation that allowed early hominins to forage more efficiently over longer distances as Africa's climate changed and forests gave way to woodlands.
 
