@@ -1,7 +1,7 @@
 REPOSITORY CONCATENATION
 ========================
 Repository: D:\RA\summ-pages
-Generated: 2025-07-26 00:30:58
+Generated: 2025-07-26 01:22:45
 Max file size limit: 50,000 characters
 
 ================================================================================
@@ -25,22 +25,28 @@ SUMMARY: Location: _layouts | Type: html file
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title | default: site.title }}</title>
-  
-  <!-- Loads the EB Garamond font from Google Fonts -->
+
+  <!-- Load the EB Garamond font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  
-  <!-- Links to your stylesheet using the robust relative_url method -->
+
+  <!-- Link to your stylesheet -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
   <div class="page-wrapper">
+
+    <!-- Build timestamp (top‑right corner) -->
+    <div class="deployment-info">
+      Last build: {{ site.time | date: "%Y-%m-%d %H:%M:%S %Z" }}
+    </div>
+
     <header>
       <h1>My Awesome Website</h1>
     </header>
 
-    <!-- The main wrapper that enables the two-column grid -->
+    <!-- Main wrapper enabling the two‑column grid -->
     <main class="content-with-sidenotes">
       {{ content }}
     </main>
@@ -65,54 +71,77 @@ SUMMARY: Location: assets / css | Type: scss file
 /* --- FONT & BODY STYLING --- */
 
 body {
-  font-family: 'EB Garamond', serif; 
+  font-family: 'EB Garamond', serif;
   line-height: 1.6;
   color: #333;
   margin: 0;
   padding: 2rem;
 }
+
 .page-wrapper {
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* --- DEPLOYMENT INFO BANNER --- */
+
+.deployment-info {
+  position: fixed;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.8em;
+  color: #777;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0.25em 0.5em;
+  border-radius: 0.25em;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
 /* --- SIDENOTE LAYOUT CSS --- */
 
-// 1. The main grid container
+// 1. The main grid container. Use dense auto‑placement so sidenotes fill
+//    the left column on the same row as their paragraphs.
 .content-with-sidenotes {
   display: grid;
   grid-template-columns: 200px 1fr;
   grid-column-gap: 40px;
   align-items: start;
+  grid-auto-flow: row dense;
 }
 
 // 2. Place all headings across BOTH columns.
 .content-with-sidenotes > h1,
 .content-with-sidenotes > h2,
 .content-with-sidenotes > h3 {
-  grid-column: 1 / -1; // THIS IS THE FIX: makes headings full-width.
+  grid-column: 1 / -1;
+  margin: 0;
 }
 
-// 3. Place paragraphs ONLY in the second column.
+// 3. Place paragraphs ONLY in the second column and add a small margin
+//    above and below for spacing.
 .content-with-sidenotes > p {
   grid-column: 2;
+  margin: 1rem 0;
 }
 
-// 4. Style the sidenote itself.
+// 4. Style the sidenote itself. Remove default margin, center it vertically
+//    within its grid cell, then nudge it down slightly with margin-top.
 .sidenote {
   grid-column: 1;
   text-align: right;
   font-size: 1.1em;
   font-style: italic;
   color: #555;
-  transform: rotate(-6deg);
-  transform-origin: top right;
+  margin: 0;
+  align-self: center;
+  margin-top: 0.2em;
 }
 
-// 5. Responsive styling for mobile
+/* --- RESPONSIVE STYLING FOR MOBILE --- */
+
 @media (max-width: 900px) {
   .content-with-sidenotes {
-    display: block; 
+    display: block;
   }
 
   .sidenote {
@@ -121,7 +150,6 @@ body {
     padding: 1em;
     background-color: #f8f8f8;
     border-left: 5px solid #ccc;
-    transform: none;
   }
 }
 
@@ -135,6 +163,8 @@ SUMMARY: Location: books | Type: md file
 layout: default
 title: "The Story of the Human Body"
 ---
+
+# Lieberman, D. E. (2013). *The story of the human body: Evolution, health, and disease.* Pantheon Books.
 
 This book begins with a puzzle. We live in paradoxical times for our bodies. On one hand, this is likely the healthiest era in human history. In many parts of the world, diseases that once killed in droves—smallpox, the plague, polio—have been conquered or quelled. We can reasonably expect our children to survive to adulthood, and for us to live into our dotage. Formerly life-threatening conditions like a broken leg or appendicitis are now easily remedied. Yet, on the other hand, we could be doing much better. A wave of chronic, preventable illnesses is sweeping the globe. These are not the ancient infectious scourges, but modern ailments: type 2 diabetes, heart disease, certain cancers, osteoporosis, but also a host of less deadly but debilitating troubles like lower back pain, anxiety, and myopia. These aren't just diseases of old age; they are increasingly appearing in middle-aged people. How can our time be both a golden age for health and a burgeoning crisis of chronic disease?
 
@@ -164,6 +194,203 @@ This sets up the book's central argument: we are caught in a feedback loop, a dy
 
 {% include sidenote.html text="Culture creates new worlds. Our old bodies get sick in them. We treat sickness, not the cause. The sickness-loop continues." %}
 
+
+---
+
+## PART I - Apes and Humans
+
+This part of the book considers the first several million years of our lineage, tracing the major biological transformations that turned an ape-like ancestor into the hunter-gatherers of the genus Homo.
+
+### [[Lieberman, D. E. (2013). 2 - Upstanding Apes. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter explores the first and arguably most fundamental transition in human evolution—the shift to bipedalism. It examines the fossil evidence from our earliest ancestors, such as Ardipithecus ramidus ("Ardi"), to understand the anatomical changes in the feet, hips, and spine that made walking on two legs possible. The central argument is that bipedalism was not an end in itself but an adaptation that allowed early hominins to forage more efficiently over longer distances as Africa's climate changed and forests gave way to woodlands.
+
+### [[Lieberman, D. E. (2013). 3 - Much Depends on Dinner. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+With our ancestors now walking upright, this chapter focuses on the next major evolutionary driver—diet. It introduces the australopiths, including the famous fossil "Lucy." The core of this chapter argues that as preferred foods like fruit became less available, our ancestors evolved crucial adaptations for eating tough, hard-to-chew "fallback foods" like roots and tubers. This shift is visible in their skeletons, which feature enormous, flat cheek teeth, powerful jaws, and massive chewing muscles designed for grinding fibrous plant matter.
+
+### [[Lieberman, D. E. (2013). 4 - The First Hunter-Gatherers. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter describes the third major transformation—the emergence of the genus Homo and the development of a nearly modern human body. It focuses on Homo erectus, an ancestor with long legs, short arms, arched feet, and a large brain. The argument is that this new body plan was an integrated suite of adaptations for a hunter-gatherer lifestyle, which involved not just gathering plants but also acquiring meat through endurance running, cooperation, and the use of the first simple stone tools.
+
+### [[Lieberman, D. E. (2013). 5 - Energy in the Ice Age. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+Here, the book explores the profound energetic consequences of the hunter-gatherer lifestyle. The higher-quality diet, rich in meat and processed with tools, provided more energy. This surplus fueled a crucial evolutionary trade-off—a smaller gut in exchange for a much larger, more metabolically expensive brain. This shift also created a new human life strategy involving a long, slow childhood and the ability to store more body fat to support brain development and reproductive success in the unpredictable world of the Ice Age.
+
+### [[Lieberman, D. E. (2013). 6 - A Very Cultured Species. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter covers the final biological transition—the origin of our own species, Homo sapiens. While anatomical changes like a globular skull and a smaller face are important, the key argument is that what truly made us "modern" was our unprecedented capacity for culture, language, and symbolic thought. This "software" revolution, more than any physical "hardware" change, allowed early modern humans to innovate, cooperate, and adapt with extraordinary speed, ultimately enabling them to colonize the entire planet.
+
+---
+
+## PART II - Farming and the Industrial Revolution
+
+This section shifts focus from biological evolution to cultural evolution, analyzing how the two greatest transformations of the last 12,000 years have created a profound and ongoing conflict with our Stone Age bodies.
+
+### [[Lieberman, D. E. (2013). 7 - Progress, Mismatch, and Dysevolution. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter bridges the book's two halves by outlining the consequences of having Paleolithic bodies in a post-Paleolithic world. It fully develops the concepts of evolutionary mismatch and introduces "dysevolution." Dysevolution is presented as a pernicious feedback loop where cultural innovations are used to treat the symptoms of mismatch diseases rather than their environmental causes, thereby allowing the diseases to persist or even worsen across generations.
+
+### [[Lieberman, D. E. (2013). 8 - Paradise Lost?. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+The Agricultural Revolution is framed here not as a straightforward step forward but as a "colossal mistake" from the perspective of individual health. While farming produced more food and fueled population growth, it also led to a cascade of mismatch diseases. The argument is that the shift to a low-variety, starchy diet caused nutritional deficiencies and cavities, while sedentary village life and proximity to livestock unleashed waves of infectious diseases and famines.
+
+### [[Lieberman, D. E. (2013). 9 - Modern Times, Modern Bodies. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter explores the paradox of health in the industrial era. On one hand, scientific and sanitation advances solved many of the infectious diseases of the agricultural era, leading to longer lives. On the other hand, the Industrial Revolution created a new set of mismatches by drastically reducing physical labor and introducing highly processed, energy-dense foods, setting the stage for the modern epidemic of chronic, non-communicable diseases.
+
+---
+
+## PART III - The Present, the Future
+
+The final part of the book applies an evolutionary lens to the most pressing health crises of our time, diagnosing their deep causes and proposing a new way to think about cultivating a healthier future.
+
+### [[Lieberman, D. E. (2013). 10 - The Vicious Circle of Too Much. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter focuses on the quintessential diseases of affluence, which are caused by an excess of energy. It explains the metabolic processes behind obesity, particularly the storage of visceral (belly) fat. The core argument is that modern diets, loaded with rapidly digested sugars and refined carbohydrates, overwhelm our ancient metabolic systems, leading to insulin resistance, type 2 diabetes, heart disease, and other chronic conditions caught in a dysevolutionary cycle.
+
+### [[Lieberman, D. E. (2013). 11 - Disuse. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+Here, the book examines the opposite problem—diseases that arise from too little of the stimuli our bodies evolved to expect. It explains that our skeletons, muscles, and even our immune systems require physical stress and microbial exposure to develop and maintain proper function. The chapter argues that modern inactivity and hyper-hygienic lifestyles contribute to diseases of disuse like osteoporosis, weak feet, and a rise in allergies and autoimmune disorders.
+
+### [[Lieberman, D. E. (2013). 12 - The Hidden Dangers of Novelty and Comfort. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter addresses mismatch diseases caused by novel behaviors and our innate craving for comfort. It explains how seemingly harmless modern inventions—like supportive shoes, comfortable chairs, and the act of reading for hours—are evolutionarily new. When taken to extremes, these comforts can become harmful, contributing to widespread problems like flat feet, chronic back pain, and myopia, which we then treat with more novel inventions, perpetuating a cycle of dysevolution.
+
+### [[Lieberman, D. E. (2013). 13 - Survival of the Fitter. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+The concluding chapter synthesizes the book's arguments to propose a path forward. It dismisses the idea that natural selection or medical technology alone will solve our modern health crises. Instead, it argues that since we cannot change our genes, we must change our environments. The most effective and humane approach is to apply the logic of evolution to create environments that nudge us—gently but deliberately—toward more walking, better diets, and other behaviors that align with how our bodies were adapted to function. It is a call to actively "cultivate our bodies."
+
+================================================================================
+FILE: books\lieberman_2013\lieberman.md
+SUMMARY: Location: books / lieberman_2013 | Type: md file
+================================================================================
+
+---
+layout: default
+title: "The Story of the Human Body"
+---
+
+Lieberman, D. E. (2013). *The story of the human body: Evolution, health, and disease.* Pantheon Books.
+
+
+This book begins with a puzzle. We live in paradoxical times for our bodies. On one hand, this is likely the healthiest era in human history. In many parts of the world, diseases that once killed in droves—smallpox, the plague, polio—have been conquered or quelled. We can reasonably expect our children to survive to adulthood, and for us to live into our dotage. Formerly life-threatening conditions like a broken leg or appendicitis are now easily remedied. Yet, on the other hand, we could be doing much better. A wave of chronic, preventable illnesses is sweeping the globe. These are not the ancient infectious scourges, but modern ailments: type 2 diabetes, heart disease, certain cancers, osteoporosis, but also a host of less deadly but debilitating troubles like lower back pain, anxiety, and myopia. These aren't just diseases of old age; they are increasingly appearing in middle-aged people. How can our time be both a golden age for health and a burgeoning crisis of chronic disease?
+
+{% include sidenote.html text="Modern health good. But new diseases rising. Why both at once?" %}
+
+The author, a professor of human evolutionary biology, argues that this paradox stems from a fundamental misunderstanding of our own bodies. The key lies in an idea best illustrated by a story from the source text: the "Mystery Monkey" of Tampa, Florida. This macaque lived for years on city streets, evading capture. While most people saw it as an animal out of place, an anomaly in a suburban environment, they rarely apply the same logic to themselves. From an evolutionary perspective, a human living in a modern city, surrounded by cars, processed food, and air-conditioning, is just as far removed from their ancestral environment as that monkey. Our bodies, the product of millions of years of evolution in environments of scarcity and physical hardship, are now operating in a world of unprecedented abundance and comfort. This profound mismatch between our ancient biology and our modern lives is the engine driving the chronic diseases that plague us.
+
+{% include sidenote.html text="Monkey in city is weird. Human in city is also weird. Our old bodies don't fit our new world. This mismatch causes sickness." %}
+
+This naturally leads to the question at the heart of the book: *What are human bodies adapted for?* The answer is more complex and less intuitive than it first appears. It’s tempting to think of adaptation in terms of perfection or optimality for a specific lifestyle, like that of a Stone Age hunter-gatherer. This logic fuels trends like the "paleodiet." But this view misunderstands what adaptation means in biology. Natural selection does not shape organisms to be healthy, long-lived, or happy. It shapes them for one primary purpose: reproductive success. Adaptations are simply heritable traits that, in a particular environment, helped an individual’s ancestors have more surviving offspring than their competitors. A craving for sugar and fat was a superb adaptation when calories were scarce and starvation was a constant threat; it helped our ancestors store energy and survive to reproduce. In a modern supermarket, that same inherited craving becomes a direct path to obesity and diabetes. The adaptation itself is not "good" or "bad"; its value is entirely dependent on the context.
+
+{% include sidenote.html text="Adaptation is not for health. It's for making babies. Sweet tooth good then, bad now. Context changed everything." %}
+
+Furthermore, the human body is not a perfectly engineered machine, but a palimpsest—an old manuscript page written on over and over again. Each stage of our evolutionary history has layered new adaptations on top of older ones, creating a jumble of compromises. Our teeth, inherited from fruit-eating ape ancestors, are superb for chewing figs but terrible for gnawing raw meat. Our upright posture, which freed our hands, also gave us weak lower backs prone to aching. There was no single environment for which the human body is "optimally" designed. To understand what we are adapted for is to understand this entire, messy history, not just a snapshot from the late Stone Age. The author suggests this history can be understood through a series of major transformations, which function as the book's narrative spine.
+
+{% include sidenote.html text="Body is not perfect design. It's a messy stack of old parts. Ape teeth, biped back. Full of compromises from long history." %}
+
+The book charts this history through five major biological transitions. It begins with the first human ancestors diverging from apes and evolving to be upright bipeds. This was followed by the evolution of the australopiths, who developed adaptations to eat a much wider range of foods beyond fruit. About two million years ago, the first members of our own genus, *Homo*, evolved nearly modern bodies and bigger brains, becoming the first hunter-gatherers. As these archaic humans spread, they evolved even larger brains and slower-growing bodies. Finally, the fifth transition was the evolution of modern humans, *Homo sapiens*, with our unique capacities for language, culture, and cooperation, which allowed us to become the sole surviving human species on the planet.
+
+{% include sidenote.html text="The story of us: walking upright, eating everything, hunting and gathering, getting big brains, then getting culture." %}
+
+However, the story does not end there. Evolution is not just a study of the past; it is an ongoing process. And for humans, the most powerful evolutionary force today is not biological, but cultural. Biological evolution is slow, passing changes through genes from parent to child. Cultural evolution is lightning-fast, passing new ideas and behaviors between any individuals. Two cultural revolutions have been so transformative that they amount to a sixth and seventh transition. The Agricultural Revolution, starting around 10,000 years ago, radically changed our diet and settlement patterns. More recently, the Industrial Revolution began to replace human labor with machines, further altering how we work, live, and interact. These cultural shifts have created the novel environments our bodies are now struggling with.
+
+{% include sidenote.html text="Evolution isn't over. Culture evolves faster than genes. Farming and factories changed our world faster than our bodies could keep up." %}
+
+This sets up the book's central argument: we are caught in a feedback loop, a dynamic the author calls "dysevolution." First, our rapid cultural evolution creates novel environments we are poorly adapted for. Second, this mismatch causes chronic, noninfectious diseases. Third, for various reasons—be it difficulty, cost, or a lack of understanding—we often fail to address the root environmental causes of these diseases. Instead, we use our cultural ingenuity (medicine, technology) to treat the symptoms. This allows the underlying mismatch to persist and even worsen, as we pass on the disease-causing environments and behaviors to the next generation. Understanding this loop—the intricate dance between our ancient, inherited bodies and our rapidly evolving culture—is the key not only to making sense of modern illness, but to finding a way to a healthier future.
+
+{% include sidenote.html text="Culture creates new worlds. Our old bodies get sick in them. We treat sickness, not the cause. The sickness-loop continues." %}
+
+
+---
+
+## PART I - Apes and Humans
+
+This part of the book considers the first several million years of our lineage, tracing the major biological transformations that turned an ape-like ancestor into the hunter-gatherers of the genus Homo.
+
+<ul>
+  <li><a href="books/lieberman_2013/lieberman1.html">Lieberman, D. E. (2013). Ch. 2 - *Upstanding Apes. In The Story of the Human Body: Evolution, Health, and Disease.* Pantheon Books.</a></li>
+</ul>
+
+### [[Lieberman, D. E. (2013). 2 - Upstanding Apes. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter explores the first and arguably most fundamental transition in human evolution—the shift to bipedalism. It examines the fossil evidence from our earliest ancestors, such as Ardipithecus ramidus ("Ardi"), to understand the anatomical changes in the feet, hips, and spine that made walking on two legs possible. The central argument is that bipedalism was not an end in itself but an adaptation that allowed early hominins to forage more efficiently over longer distances as Africa's climate changed and forests gave way to woodlands.
+
+### [[Lieberman, D. E. (2013). 3 - Much Depends on Dinner. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+With our ancestors now walking upright, this chapter focuses on the next major evolutionary driver—diet. It introduces the australopiths, including the famous fossil "Lucy." The core of this chapter argues that as preferred foods like fruit became less available, our ancestors evolved crucial adaptations for eating tough, hard-to-chew "fallback foods" like roots and tubers. This shift is visible in their skeletons, which feature enormous, flat cheek teeth, powerful jaws, and massive chewing muscles designed for grinding fibrous plant matter.
+
+### [[Lieberman, D. E. (2013). 4 - The First Hunter-Gatherers. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter describes the third major transformation—the emergence of the genus Homo and the development of a nearly modern human body. It focuses on Homo erectus, an ancestor with long legs, short arms, arched feet, and a large brain. The argument is that this new body plan was an integrated suite of adaptations for a hunter-gatherer lifestyle, which involved not just gathering plants but also acquiring meat through endurance running, cooperation, and the use of the first simple stone tools.
+
+### [[Lieberman, D. E. (2013). 5 - Energy in the Ice Age. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+Here, the book explores the profound energetic consequences of the hunter-gatherer lifestyle. The higher-quality diet, rich in meat and processed with tools, provided more energy. This surplus fueled a crucial evolutionary trade-off—a smaller gut in exchange for a much larger, more metabolically expensive brain. This shift also created a new human life strategy involving a long, slow childhood and the ability to store more body fat to support brain development and reproductive success in the unpredictable world of the Ice Age.
+
+### [[Lieberman, D. E. (2013). 6 - A Very Cultured Species. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter covers the final biological transition—the origin of our own species, Homo sapiens. While anatomical changes like a globular skull and a smaller face are important, the key argument is that what truly made us "modern" was our unprecedented capacity for culture, language, and symbolic thought. This "software" revolution, more than any physical "hardware" change, allowed early modern humans to innovate, cooperate, and adapt with extraordinary speed, ultimately enabling them to colonize the entire planet.
+
+---
+
+## PART II - Farming and the Industrial Revolution
+
+This section shifts focus from biological evolution to cultural evolution, analyzing how the two greatest transformations of the last 12,000 years have created a profound and ongoing conflict with our Stone Age bodies.
+
+### [[Lieberman, D. E. (2013). 7 - Progress, Mismatch, and Dysevolution. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter bridges the book's two halves by outlining the consequences of having Paleolithic bodies in a post-Paleolithic world. It fully develops the concepts of evolutionary mismatch and introduces "dysevolution." Dysevolution is presented as a pernicious feedback loop where cultural innovations are used to treat the symptoms of mismatch diseases rather than their environmental causes, thereby allowing the diseases to persist or even worsen across generations.
+
+### [[Lieberman, D. E. (2013). 8 - Paradise Lost?. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+The Agricultural Revolution is framed here not as a straightforward step forward but as a "colossal mistake" from the perspective of individual health. While farming produced more food and fueled population growth, it also led to a cascade of mismatch diseases. The argument is that the shift to a low-variety, starchy diet caused nutritional deficiencies and cavities, while sedentary village life and proximity to livestock unleashed waves of infectious diseases and famines.
+
+### [[Lieberman, D. E. (2013). 9 - Modern Times, Modern Bodies. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter explores the paradox of health in the industrial era. On one hand, scientific and sanitation advances solved many of the infectious diseases of the agricultural era, leading to longer lives. On the other hand, the Industrial Revolution created a new set of mismatches by drastically reducing physical labor and introducing highly processed, energy-dense foods, setting the stage for the modern epidemic of chronic, non-communicable diseases.
+
+---
+
+## PART III - The Present, the Future
+
+The final part of the book applies an evolutionary lens to the most pressing health crises of our time, diagnosing their deep causes and proposing a new way to think about cultivating a healthier future.
+
+### [[Lieberman, D. E. (2013). 10 - The Vicious Circle of Too Much. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter focuses on the quintessential diseases of affluence, which are caused by an excess of energy. It explains the metabolic processes behind obesity, particularly the storage of visceral (belly) fat. The core argument is that modern diets, loaded with rapidly digested sugars and refined carbohydrates, overwhelm our ancient metabolic systems, leading to insulin resistance, type 2 diabetes, heart disease, and other chronic conditions caught in a dysevolutionary cycle.
+
+### [[Lieberman, D. E. (2013). 11 - Disuse. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+Here, the book examines the opposite problem—diseases that arise from too little of the stimuli our bodies evolved to expect. It explains that our skeletons, muscles, and even our immune systems require physical stress and microbial exposure to develop and maintain proper function. The chapter argues that modern inactivity and hyper-hygienic lifestyles contribute to diseases of disuse like osteoporosis, weak feet, and a rise in allergies and autoimmune disorders.
+
+### [[Lieberman, D. E. (2013). 12 - The Hidden Dangers of Novelty and Comfort. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter addresses mismatch diseases caused by novel behaviors and our innate craving for comfort. It explains how seemingly harmless modern inventions—like supportive shoes, comfortable chairs, and the act of reading for hours—are evolutionarily new. When taken to extremes, these comforts can become harmful, contributing to widespread problems like flat feet, chronic back pain, and myopia, which we then treat with more novel inventions, perpetuating a cycle of dysevolution.
+
+### [[Lieberman, D. E. (2013). 13 - Survival of the Fitter. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+The concluding chapter synthesizes the book's arguments to propose a path forward. It dismisses the idea that natural selection or medical technology alone will solve our modern health crises. Instead, it argues that since we cannot change our genes, we must change our environments. The most effective and humane approach is to apply the logic of evolution to create environments that nudge us—gently but deliberately—toward more walking, better diets, and other behaviors that align with how our bodies were adapted to function. It is a call to actively "cultivate our bodies."
+
+================================================================================
+FILE: books\lieberman_2013\lieberman1.md
+SUMMARY: Location: books / lieberman_2013 | Type: md file
+================================================================================
+
+The book begins with a scene that is both startling and instructive: a chimpanzee hunt. We see our closest living relatives, with whom we share over 98% of our DNA, not as the gentle, intelligent cousins of our popular imagination, but as a whirlwind of acrobatic violence. They tear through the forest canopy with a speed and agility that is, from a human perspective, simply superhuman. The scene forces us to confront a foundational paradox of our own existence. If we are the Earth's dominant species, why are we so physically unimpressive? A human is no match for a chimp in speed, power, or dexterity in the trees. We are, as the text puts it, "athletically pathetic." This physical weakness is not a minor footnote in our story; it is the central mystery we must solve to understand how we became who we are. The answer, it turns out, begins not with our big brains or clever hands, but with the simple, and surprisingly awkward, act of standing up.
+{% include sidenote.html text="Chimps athletic. Humans weak. Why did weakness win? Starts with walking." %}
+The classic story of human origins, first sketched by Darwin, is a neat and satisfying causal chain: our ancestors stood up, which freed their hands from the business of locomotion. These newly liberated hands could then make and use tools, which in turn created an evolutionary pressure for bigger, cleverer brains to manage these new skills. It’s an elegant narrative, but as the fossil record has grown richer, it has become clear that this story has the sequence of events wrong. The first stone tools don't appear in the archaeological record until millions of years after our ancestors first became bipedal. For a vast stretch of our history, our ancestors were walking around on two legs, with their hands free, but doing very little with them that a chimp couldn't do. The trigger for bipedalism must have been something else—something more immediate and practical than a distant, unforeseen future of technology and civilization.
+{% include sidenote.html text="Old story: walk, then free hands, then tools, then big brain. Problem: timeline wrong. Tools appear much later. Need new reason for walking." %}
+The real impetus seems to have been a changing world. Between 10 and 5 million years ago, around the time the human and chimpanzee lineages diverged, the global climate was cooling. In Africa, this meant the vast, lush rainforests began to shrink, giving way to more open woodlands and savannas. For a fruit-eating ape, this was a disaster. The fruit that formed the core of their diet became scarcer, more dispersed, and more seasonal. This created a new and intense selective pressure: the need to travel longer distances between food sources, and the need to rely more heavily on "fallback foods"—tougher, lower-quality items like stems, bark, and leaves—when fruit was unavailable. The solution to this problem was not to become a better climber, but to become a better traveler on the ground. This is where the surprising biomechanics of walking come into play.
+{% include sidenote.html text="Climate cooled. Rainforests shrank. Fruit scarcer. Ancestors needed to travel farther for food. Ground travel became more important." %}
+One of the book’s most compelling points is just how inefficient other apes are at walking. When a chimpanzee walks on two legs, it lurches from side to side, its body a study in instability. It must walk with bent hips and bent knees, requiring constant, energy-draining muscle contractions just to keep from toppling over. Human walking, in contrast, is a model of efficiency. Our anatomy is built for it. Our S-shaped spine acts like a spring, positioning our torso directly above our hips for stability. The large, broad bones of our pelvis face sideways, not backward like in an ape, allowing muscles on the side of our hip to keep our upper body stable with each step, rather than letting it fall to one side. The result is that our skeleton, not our muscles, does most of the work. We essentially just fall forward, catching ourselves with each step. The energy savings are staggering: lab studies show that a chimpanzee uses four times as much energy to walk a given distance as a human does. For an early hominin in a world of dwindling resources, being able to travel four times as far on the same "tank of gas" would have been a monumental advantage. Bipedalism wasn't an adaptation for a future of tool use; it was a fuel-efficiency upgrade for the present.
+{% include sidenote.html text="Chimp walk costly. Bent-kneed, muscle-powered. Human walk cheap. Skeleton stacks, falls forward. Sideways pelvis, S-spine key. Huge energy savings." %}
+This story is not just a theory; it is written in the bones of our ancestors. The fossil known as "Ardi" (Ardipithecus ramidus), dating to about 4.4 million years ago, provides a remarkable snapshot of this transition in progress. Ardi’s skeleton is a mosaic of old and new. Her pelvis, though fragmented, shows the beginnings of the broad, sideways-facing shape needed for stable walking. Yet, her feet still had a divergent, grasping big toe, much like an ape's, indicating she was still an adept climber. She was a creature adapted for two worlds: capable of moving through the trees, but also capable of walking on the ground with a stability and efficiency a chimpanzee could never match. She was not lurching like a chimp, but she was not striding like a modern human either. Ardi embodies the intermediate step, a creature who became a biped not by giving up climbing, but by becoming better at walking when she had to.
+{% include sidenote.html text="Fossil 'Ardi' proves it. Pelvis adapted for bipedalism. Foot still had grasping toe for climbing. A transitional form for two worlds." %}
+But evolution is a story of trade-offs, and the shift to bipedalism, while solving one problem, created a host of others. These new challenges, in turn, became the selective pressures that shaped the next stages of our evolution. One of the most profound is the engineering problem of being a pregnant biped. In a four-legged mammal, the extra weight of a fetus is slung between the limbs, like cargo in a hammock. The animal’s center of gravity remains stable. For a biped, however, that extra weight is all out front, pulling the center of gravity forward, away from the base of support provided by the feet. This creates a constant risk of falling over and places immense shearing stress on the lower back as the vertebrae try to slide past one another. The solution, visible in the fossil record, was for females to evolve more wedge-shaped lumbar vertebrae than males, allowing for a more pronounced curve in the lower back to shift the center of mass back over the hips. This anatomical quirk, a direct consequence of being a pregnant biped, is a beautiful and painful illustration of evolutionary compromise, and the ultimate reason for the chronic lower back pain that afflicts so many human mothers.
+{% include sidenote.html text="Bipedalism created new problems. Pregnancy weight pulls forward, creating instability. Back must curve more. Stresses spine. Female vertebrae adapted, causing back pain." %}
+The downsides didn't stop there. By committing to walking, our ancestors surrendered the ability to gallop. They became slow and unstable, making them easy targets for the many predators of the African savanna. Giving up their powerful climbing arms and grasping feet also meant they were less agile in the trees, their only reliable escape route. This loss of speed and power, this embrace of being "athletically pathetic," was an enormous gamble. Yet it was this very vulnerability that set the stage for everything that followed. Being slow, weak, and ground-bound created a new, desperate need for solutions—for cooperation, for endurance running, for better communication, and, eventually, millions of years later, for the stone tools that Darwin had originally placed at the beginning of the story. Bipedalism was not the first step in a pre-ordained march toward humanity. It was an accidental, contingent, and risky adaptation to a changing climate, a path that, through a series of trade-offs and new challenges, inadvertently led to us.
 
 ================================================================================
 FILE: concatenate_repo.py
@@ -439,7 +666,7 @@ SUMMARY: Type: txt file
 REPOSITORY CONCATENATION
 ========================
 Repository: D:\RA\summ-pages
-Generated: 2025-07-26 00:30:58
+Generated: 2025-07-26 01:22:45
 Max file size limit: 50,000 characters
 
 ================================================================================
@@ -463,22 +690,28 @@ SUMMARY: Location: _layouts | Type: html file
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title | default: site.title }}</title>
-  
-  <!-- Loads the EB Garamond font from Google Fonts -->
+
+  <!-- Load the EB Garamond font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  
-  <!-- Links to your stylesheet using the robust relative_url method -->
+
+  <!-- Link to your stylesheet -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
   <div class="page-wrapper">
+
+    <!-- Build timestamp (top‑right corner) -->
+    <div class="deployment-info">
+      Last build: {{ site.time | date: "%Y-%m-%d %H:%M:%S %Z" }}
+    </div>
+
     <header>
       <h1>My Awesome Website</h1>
     </header>
 
-    <!-- The main wrapper that enables the two-column grid -->
+    <!-- Main wrapper enabling the two‑column grid -->
     <main class="content-with-sidenotes">
       {{ content }}
     </main>
@@ -503,54 +736,77 @@ SUMMARY: Location: assets / css | Type: scss file
 /* --- FONT & BODY STYLING --- */
 
 body {
-  font-family: 'EB Garamond', serif; 
+  font-family: 'EB Garamond', serif;
   line-height: 1.6;
   color: #333;
   margin: 0;
   padding: 2rem;
 }
+
 .page-wrapper {
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* --- DEPLOYMENT INFO BANNER --- */
+
+.deployment-info {
+  position: fixed;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.8em;
+  color: #777;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0.25em 0.5em;
+  border-radius: 0.25em;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
 /* --- SIDENOTE LAYOUT CSS --- */
 
-// 1. The main grid container
+// 1. The main grid container. Use dense auto‑placement so sidenotes fill
+//    the left column on the same row as their paragraphs.
 .content-with-sidenotes {
   display: grid;
   grid-template-columns: 200px 1fr;
   grid-column-gap: 40px;
   align-items: start;
+  grid-auto-flow: row dense;
 }
 
 // 2. Place all headings across BOTH columns.
 .content-with-sidenotes > h1,
 .content-with-sidenotes > h2,
 .content-with-sidenotes > h3 {
-  grid-column: 1 / -1; // THIS IS THE FIX: makes headings full-width.
+  grid-column: 1 / -1;
+  margin: 0;
 }
 
-// 3. Place paragraphs ONLY in the second column.
+// 3. Place paragraphs ONLY in the second column and add a small margin
+//    above and below for spacing.
 .content-with-sidenotes > p {
   grid-column: 2;
+  margin: 1rem 0;
 }
 
-// 4. Style the sidenote itself.
+// 4. Style the sidenote itself. Remove default margin, center it vertically
+//    within its grid cell, then nudge it down slightly with margin-top.
 .sidenote {
   grid-column: 1;
   text-align: right;
   font-size: 1.1em;
   font-style: italic;
   color: #555;
-  transform: rotate(-6deg);
-  transform-origin: top right;
+  margin: 0;
+  align-self: center;
+  margin-top: 0.2em;
 }
 
-// 5. Responsive styling for mobile
+/* --- RESPONSIVE STYLING FOR MOBILE --- */
+
 @media (max-width: 900px) {
   .content-with-sidenotes {
-    display: block; 
+    display: block;
   }
 
   .sidenote {
@@ -559,7 +815,6 @@ body {
     padding: 1em;
     background-color: #f8f8f8;
     border-left: 5px solid #ccc;
-    transform: none;
   }
 }
 
@@ -573,6 +828,8 @@ SUMMARY: Location: books | Type: md file
 layout: default
 title: "The Story of the Human Body"
 ---
+
+# Lieberman, D. E. (2013). *The story of the human body: Evolution, health, and disease.* Pantheon Books.
 
 This book begins with a puzzle. We live in paradoxical times for our bodies. On one hand, this is likely the healthiest era in human history. In many parts of the world, diseases that once killed in droves—smallpox, the plague, polio—have been conquered or quelled. We can reasonably expect our children to survive to adulthood, and for us to live into our dotage. Formerly life-threatening conditions like a broken leg or appendicitis are now easily remedied. Yet, on the other hand, we could be doing much better. A wave of chronic, preventable illnesses is sweeping the globe. These are not the ancient infectious scourges, but modern ailments: type 2 diabetes, heart disease, certain cancers, osteoporosis, but also a host of less deadly but debilitating troubles like lower back pain, anxiety, and myopia. These aren't just diseases of old age; they are increasingly appearing in middle-aged people. How can our time be both a golden age for health and a burgeoning crisis of chronic disease?
 
@@ -602,6 +859,203 @@ This sets up the book's central argument: we are caught in a feedback loop, a dy
 
 {% include sidenote.html text="Culture creates new worlds. Our old bodies get sick in them. We treat sickness, not the cause. The sickness-loop continues." %}
 
+
+---
+
+## PART I - Apes and Humans
+
+This part of the book considers the first several million years of our lineage, tracing the major biological transformations that turned an ape-like ancestor into the hunter-gatherers of the genus Homo.
+
+### [[Lieberman, D. E. (2013). 2 - Upstanding Apes. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter explores the first and arguably most fundamental transition in human evolution—the shift to bipedalism. It examines the fossil evidence from our earliest ancestors, such as Ardipithecus ramidus ("Ardi"), to understand the anatomical changes in the feet, hips, and spine that made walking on two legs possible. The central argument is that bipedalism was not an end in itself but an adaptation that allowed early hominins to forage more efficiently over longer distances as Africa's climate changed and forests gave way to woodlands.
+
+### [[Lieberman, D. E. (2013). 3 - Much Depends on Dinner. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+With our ancestors now walking upright, this chapter focuses on the next major evolutionary driver—diet. It introduces the australopiths, including the famous fossil "Lucy." The core of this chapter argues that as preferred foods like fruit became less available, our ancestors evolved crucial adaptations for eating tough, hard-to-chew "fallback foods" like roots and tubers. This shift is visible in their skeletons, which feature enormous, flat cheek teeth, powerful jaws, and massive chewing muscles designed for grinding fibrous plant matter.
+
+### [[Lieberman, D. E. (2013). 4 - The First Hunter-Gatherers. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter describes the third major transformation—the emergence of the genus Homo and the development of a nearly modern human body. It focuses on Homo erectus, an ancestor with long legs, short arms, arched feet, and a large brain. The argument is that this new body plan was an integrated suite of adaptations for a hunter-gatherer lifestyle, which involved not just gathering plants but also acquiring meat through endurance running, cooperation, and the use of the first simple stone tools.
+
+### [[Lieberman, D. E. (2013). 5 - Energy in the Ice Age. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+Here, the book explores the profound energetic consequences of the hunter-gatherer lifestyle. The higher-quality diet, rich in meat and processed with tools, provided more energy. This surplus fueled a crucial evolutionary trade-off—a smaller gut in exchange for a much larger, more metabolically expensive brain. This shift also created a new human life strategy involving a long, slow childhood and the ability to store more body fat to support brain development and reproductive success in the unpredictable world of the Ice Age.
+
+### [[Lieberman, D. E. (2013). 6 - A Very Cultured Species. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter covers the final biological transition—the origin of our own species, Homo sapiens. While anatomical changes like a globular skull and a smaller face are important, the key argument is that what truly made us "modern" was our unprecedented capacity for culture, language, and symbolic thought. This "software" revolution, more than any physical "hardware" change, allowed early modern humans to innovate, cooperate, and adapt with extraordinary speed, ultimately enabling them to colonize the entire planet.
+
+---
+
+## PART II - Farming and the Industrial Revolution
+
+This section shifts focus from biological evolution to cultural evolution, analyzing how the two greatest transformations of the last 12,000 years have created a profound and ongoing conflict with our Stone Age bodies.
+
+### [[Lieberman, D. E. (2013). 7 - Progress, Mismatch, and Dysevolution. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter bridges the book's two halves by outlining the consequences of having Paleolithic bodies in a post-Paleolithic world. It fully develops the concepts of evolutionary mismatch and introduces "dysevolution." Dysevolution is presented as a pernicious feedback loop where cultural innovations are used to treat the symptoms of mismatch diseases rather than their environmental causes, thereby allowing the diseases to persist or even worsen across generations.
+
+### [[Lieberman, D. E. (2013). 8 - Paradise Lost?. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+The Agricultural Revolution is framed here not as a straightforward step forward but as a "colossal mistake" from the perspective of individual health. While farming produced more food and fueled population growth, it also led to a cascade of mismatch diseases. The argument is that the shift to a low-variety, starchy diet caused nutritional deficiencies and cavities, while sedentary village life and proximity to livestock unleashed waves of infectious diseases and famines.
+
+### [[Lieberman, D. E. (2013). 9 - Modern Times, Modern Bodies. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter explores the paradox of health in the industrial era. On one hand, scientific and sanitation advances solved many of the infectious diseases of the agricultural era, leading to longer lives. On the other hand, the Industrial Revolution created a new set of mismatches by drastically reducing physical labor and introducing highly processed, energy-dense foods, setting the stage for the modern epidemic of chronic, non-communicable diseases.
+
+---
+
+## PART III - The Present, the Future
+
+The final part of the book applies an evolutionary lens to the most pressing health crises of our time, diagnosing their deep causes and proposing a new way to think about cultivating a healthier future.
+
+### [[Lieberman, D. E. (2013). 10 - The Vicious Circle of Too Much. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter focuses on the quintessential diseases of affluence, which are caused by an excess of energy. It explains the metabolic processes behind obesity, particularly the storage of visceral (belly) fat. The core argument is that modern diets, loaded with rapidly digested sugars and refined carbohydrates, overwhelm our ancient metabolic systems, leading to insulin resistance, type 2 diabetes, heart disease, and other chronic conditions caught in a dysevolutionary cycle.
+
+### [[Lieberman, D. E. (2013). 11 - Disuse. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+Here, the book examines the opposite problem—diseases that arise from too little of the stimuli our bodies evolved to expect. It explains that our skeletons, muscles, and even our immune systems require physical stress and microbial exposure to develop and maintain proper function. The chapter argues that modern inactivity and hyper-hygienic lifestyles contribute to diseases of disuse like osteoporosis, weak feet, and a rise in allergies and autoimmune disorders.
+
+### [[Lieberman, D. E. (2013). 12 - The Hidden Dangers of Novelty and Comfort. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter addresses mismatch diseases caused by novel behaviors and our innate craving for comfort. It explains how seemingly harmless modern inventions—like supportive shoes, comfortable chairs, and the act of reading for hours—are evolutionarily new. When taken to extremes, these comforts can become harmful, contributing to widespread problems like flat feet, chronic back pain, and myopia, which we then treat with more novel inventions, perpetuating a cycle of dysevolution.
+
+### [[Lieberman, D. E. (2013). 13 - Survival of the Fitter. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+The concluding chapter synthesizes the book's arguments to propose a path forward. It dismisses the idea that natural selection or medical technology alone will solve our modern health crises. Instead, it argues that since we cannot change our genes, we must change our environments. The most effective and humane approach is to apply the logic of evolution to create environments that nudge us—gently but deliberately—toward more walking, better diets, and other behaviors that align with how our bodies were adapted to function. It is a call to actively "cultivate our bodies."
+
+================================================================================
+FILE: books\lieberman_2013\lieberman.md
+SUMMARY: Location: books / lieberman_2013 | Type: md file
+================================================================================
+
+---
+layout: default
+title: "The Story of the Human Body"
+---
+
+Lieberman, D. E. (2013). *The story of the human body: Evolution, health, and disease.* Pantheon Books.
+
+
+This book begins with a puzzle. We live in paradoxical times for our bodies. On one hand, this is likely the healthiest era in human history. In many parts of the world, diseases that once killed in droves—smallpox, the plague, polio—have been conquered or quelled. We can reasonably expect our children to survive to adulthood, and for us to live into our dotage. Formerly life-threatening conditions like a broken leg or appendicitis are now easily remedied. Yet, on the other hand, we could be doing much better. A wave of chronic, preventable illnesses is sweeping the globe. These are not the ancient infectious scourges, but modern ailments: type 2 diabetes, heart disease, certain cancers, osteoporosis, but also a host of less deadly but debilitating troubles like lower back pain, anxiety, and myopia. These aren't just diseases of old age; they are increasingly appearing in middle-aged people. How can our time be both a golden age for health and a burgeoning crisis of chronic disease?
+
+{% include sidenote.html text="Modern health good. But new diseases rising. Why both at once?" %}
+
+The author, a professor of human evolutionary biology, argues that this paradox stems from a fundamental misunderstanding of our own bodies. The key lies in an idea best illustrated by a story from the source text: the "Mystery Monkey" of Tampa, Florida. This macaque lived for years on city streets, evading capture. While most people saw it as an animal out of place, an anomaly in a suburban environment, they rarely apply the same logic to themselves. From an evolutionary perspective, a human living in a modern city, surrounded by cars, processed food, and air-conditioning, is just as far removed from their ancestral environment as that monkey. Our bodies, the product of millions of years of evolution in environments of scarcity and physical hardship, are now operating in a world of unprecedented abundance and comfort. This profound mismatch between our ancient biology and our modern lives is the engine driving the chronic diseases that plague us.
+
+{% include sidenote.html text="Monkey in city is weird. Human in city is also weird. Our old bodies don't fit our new world. This mismatch causes sickness." %}
+
+This naturally leads to the question at the heart of the book: *What are human bodies adapted for?* The answer is more complex and less intuitive than it first appears. It’s tempting to think of adaptation in terms of perfection or optimality for a specific lifestyle, like that of a Stone Age hunter-gatherer. This logic fuels trends like the "paleodiet." But this view misunderstands what adaptation means in biology. Natural selection does not shape organisms to be healthy, long-lived, or happy. It shapes them for one primary purpose: reproductive success. Adaptations are simply heritable traits that, in a particular environment, helped an individual’s ancestors have more surviving offspring than their competitors. A craving for sugar and fat was a superb adaptation when calories were scarce and starvation was a constant threat; it helped our ancestors store energy and survive to reproduce. In a modern supermarket, that same inherited craving becomes a direct path to obesity and diabetes. The adaptation itself is not "good" or "bad"; its value is entirely dependent on the context.
+
+{% include sidenote.html text="Adaptation is not for health. It's for making babies. Sweet tooth good then, bad now. Context changed everything." %}
+
+Furthermore, the human body is not a perfectly engineered machine, but a palimpsest—an old manuscript page written on over and over again. Each stage of our evolutionary history has layered new adaptations on top of older ones, creating a jumble of compromises. Our teeth, inherited from fruit-eating ape ancestors, are superb for chewing figs but terrible for gnawing raw meat. Our upright posture, which freed our hands, also gave us weak lower backs prone to aching. There was no single environment for which the human body is "optimally" designed. To understand what we are adapted for is to understand this entire, messy history, not just a snapshot from the late Stone Age. The author suggests this history can be understood through a series of major transformations, which function as the book's narrative spine.
+
+{% include sidenote.html text="Body is not perfect design. It's a messy stack of old parts. Ape teeth, biped back. Full of compromises from long history." %}
+
+The book charts this history through five major biological transitions. It begins with the first human ancestors diverging from apes and evolving to be upright bipeds. This was followed by the evolution of the australopiths, who developed adaptations to eat a much wider range of foods beyond fruit. About two million years ago, the first members of our own genus, *Homo*, evolved nearly modern bodies and bigger brains, becoming the first hunter-gatherers. As these archaic humans spread, they evolved even larger brains and slower-growing bodies. Finally, the fifth transition was the evolution of modern humans, *Homo sapiens*, with our unique capacities for language, culture, and cooperation, which allowed us to become the sole surviving human species on the planet.
+
+{% include sidenote.html text="The story of us: walking upright, eating everything, hunting and gathering, getting big brains, then getting culture." %}
+
+However, the story does not end there. Evolution is not just a study of the past; it is an ongoing process. And for humans, the most powerful evolutionary force today is not biological, but cultural. Biological evolution is slow, passing changes through genes from parent to child. Cultural evolution is lightning-fast, passing new ideas and behaviors between any individuals. Two cultural revolutions have been so transformative that they amount to a sixth and seventh transition. The Agricultural Revolution, starting around 10,000 years ago, radically changed our diet and settlement patterns. More recently, the Industrial Revolution began to replace human labor with machines, further altering how we work, live, and interact. These cultural shifts have created the novel environments our bodies are now struggling with.
+
+{% include sidenote.html text="Evolution isn't over. Culture evolves faster than genes. Farming and factories changed our world faster than our bodies could keep up." %}
+
+This sets up the book's central argument: we are caught in a feedback loop, a dynamic the author calls "dysevolution." First, our rapid cultural evolution creates novel environments we are poorly adapted for. Second, this mismatch causes chronic, noninfectious diseases. Third, for various reasons—be it difficulty, cost, or a lack of understanding—we often fail to address the root environmental causes of these diseases. Instead, we use our cultural ingenuity (medicine, technology) to treat the symptoms. This allows the underlying mismatch to persist and even worsen, as we pass on the disease-causing environments and behaviors to the next generation. Understanding this loop—the intricate dance between our ancient, inherited bodies and our rapidly evolving culture—is the key not only to making sense of modern illness, but to finding a way to a healthier future.
+
+{% include sidenote.html text="Culture creates new worlds. Our old bodies get sick in them. We treat sickness, not the cause. The sickness-loop continues." %}
+
+
+---
+
+## PART I - Apes and Humans
+
+This part of the book considers the first several million years of our lineage, tracing the major biological transformations that turned an ape-like ancestor into the hunter-gatherers of the genus Homo.
+
+<ul>
+  <li><a href="books/lieberman_2013/lieberman1.html">Lieberman, D. E. (2013). Ch. 2 - *Upstanding Apes. In The Story of the Human Body: Evolution, Health, and Disease.* Pantheon Books.</a></li>
+</ul>
+
+### [[Lieberman, D. E. (2013). 2 - Upstanding Apes. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter explores the first and arguably most fundamental transition in human evolution—the shift to bipedalism. It examines the fossil evidence from our earliest ancestors, such as Ardipithecus ramidus ("Ardi"), to understand the anatomical changes in the feet, hips, and spine that made walking on two legs possible. The central argument is that bipedalism was not an end in itself but an adaptation that allowed early hominins to forage more efficiently over longer distances as Africa's climate changed and forests gave way to woodlands.
+
+### [[Lieberman, D. E. (2013). 3 - Much Depends on Dinner. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+With our ancestors now walking upright, this chapter focuses on the next major evolutionary driver—diet. It introduces the australopiths, including the famous fossil "Lucy." The core of this chapter argues that as preferred foods like fruit became less available, our ancestors evolved crucial adaptations for eating tough, hard-to-chew "fallback foods" like roots and tubers. This shift is visible in their skeletons, which feature enormous, flat cheek teeth, powerful jaws, and massive chewing muscles designed for grinding fibrous plant matter.
+
+### [[Lieberman, D. E. (2013). 4 - The First Hunter-Gatherers. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter describes the third major transformation—the emergence of the genus Homo and the development of a nearly modern human body. It focuses on Homo erectus, an ancestor with long legs, short arms, arched feet, and a large brain. The argument is that this new body plan was an integrated suite of adaptations for a hunter-gatherer lifestyle, which involved not just gathering plants but also acquiring meat through endurance running, cooperation, and the use of the first simple stone tools.
+
+### [[Lieberman, D. E. (2013). 5 - Energy in the Ice Age. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+Here, the book explores the profound energetic consequences of the hunter-gatherer lifestyle. The higher-quality diet, rich in meat and processed with tools, provided more energy. This surplus fueled a crucial evolutionary trade-off—a smaller gut in exchange for a much larger, more metabolically expensive brain. This shift also created a new human life strategy involving a long, slow childhood and the ability to store more body fat to support brain development and reproductive success in the unpredictable world of the Ice Age.
+
+### [[Lieberman, D. E. (2013). 6 - A Very Cultured Species. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter covers the final biological transition—the origin of our own species, Homo sapiens. While anatomical changes like a globular skull and a smaller face are important, the key argument is that what truly made us "modern" was our unprecedented capacity for culture, language, and symbolic thought. This "software" revolution, more than any physical "hardware" change, allowed early modern humans to innovate, cooperate, and adapt with extraordinary speed, ultimately enabling them to colonize the entire planet.
+
+---
+
+## PART II - Farming and the Industrial Revolution
+
+This section shifts focus from biological evolution to cultural evolution, analyzing how the two greatest transformations of the last 12,000 years have created a profound and ongoing conflict with our Stone Age bodies.
+
+### [[Lieberman, D. E. (2013). 7 - Progress, Mismatch, and Dysevolution. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter bridges the book's two halves by outlining the consequences of having Paleolithic bodies in a post-Paleolithic world. It fully develops the concepts of evolutionary mismatch and introduces "dysevolution." Dysevolution is presented as a pernicious feedback loop where cultural innovations are used to treat the symptoms of mismatch diseases rather than their environmental causes, thereby allowing the diseases to persist or even worsen across generations.
+
+### [[Lieberman, D. E. (2013). 8 - Paradise Lost?. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+The Agricultural Revolution is framed here not as a straightforward step forward but as a "colossal mistake" from the perspective of individual health. While farming produced more food and fueled population growth, it also led to a cascade of mismatch diseases. The argument is that the shift to a low-variety, starchy diet caused nutritional deficiencies and cavities, while sedentary village life and proximity to livestock unleashed waves of infectious diseases and famines.
+
+### [[Lieberman, D. E. (2013). 9 - Modern Times, Modern Bodies. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter explores the paradox of health in the industrial era. On one hand, scientific and sanitation advances solved many of the infectious diseases of the agricultural era, leading to longer lives. On the other hand, the Industrial Revolution created a new set of mismatches by drastically reducing physical labor and introducing highly processed, energy-dense foods, setting the stage for the modern epidemic of chronic, non-communicable diseases.
+
+---
+
+## PART III - The Present, the Future
+
+The final part of the book applies an evolutionary lens to the most pressing health crises of our time, diagnosing their deep causes and proposing a new way to think about cultivating a healthier future.
+
+### [[Lieberman, D. E. (2013). 10 - The Vicious Circle of Too Much. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter focuses on the quintessential diseases of affluence, which are caused by an excess of energy. It explains the metabolic processes behind obesity, particularly the storage of visceral (belly) fat. The core argument is that modern diets, loaded with rapidly digested sugars and refined carbohydrates, overwhelm our ancient metabolic systems, leading to insulin resistance, type 2 diabetes, heart disease, and other chronic conditions caught in a dysevolutionary cycle.
+
+### [[Lieberman, D. E. (2013). 11 - Disuse. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+Here, the book examines the opposite problem—diseases that arise from too little of the stimuli our bodies evolved to expect. It explains that our skeletons, muscles, and even our immune systems require physical stress and microbial exposure to develop and maintain proper function. The chapter argues that modern inactivity and hyper-hygienic lifestyles contribute to diseases of disuse like osteoporosis, weak feet, and a rise in allergies and autoimmune disorders.
+
+### [[Lieberman, D. E. (2013). 12 - The Hidden Dangers of Novelty and Comfort. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+This chapter addresses mismatch diseases caused by novel behaviors and our innate craving for comfort. It explains how seemingly harmless modern inventions—like supportive shoes, comfortable chairs, and the act of reading for hours—are evolutionarily new. When taken to extremes, these comforts can become harmful, contributing to widespread problems like flat feet, chronic back pain, and myopia, which we then treat with more novel inventions, perpetuating a cycle of dysevolution.
+
+### [[Lieberman, D. E. (2013). 13 - Survival of the Fitter. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+
+The concluding chapter synthesizes the book's arguments to propose a path forward. It dismisses the idea that natural selection or medical technology alone will solve our modern health crises. Instead, it argues that since we cannot change our genes, we must change our environments. The most effective and humane approach is to apply the logic of evolution to create environments that nudge us—gently but deliberately—toward more walking, better diets, and other behaviors that align with how our bodies were adapted to function. It is a call to actively "cultivate our bodies."
+
+================================================================================
+FILE: books\lieberman_2013\lieberman1.md
+SUMMARY: Location: books / lieberman_2013 | Type: md file
+================================================================================
+
+The book begins with a scene that is both startling and instructive: a chimpanzee hunt. We see our closest living relatives, with whom we share over 98% of our DNA, not as the gentle, intelligent cousins of our popular imagination, but as a whirlwind of acrobatic violence. They tear through the forest canopy with a speed and agility that is, from a human perspective, simply superhuman. The scene forces us to confront a foundational paradox of our own existence. If we are the Earth's dominant species, why are we so physically unimpressive? A human is no match for a chimp in speed, power, or dexterity in the trees. We are, as the text puts it, "athletically pathetic." This physical weakness is not a minor footnote in our story; it is the central mystery we must solve to understand how we became who we are. The answer, it turns out, begins not with our big brains or clever hands, but with the simple, and surprisingly awkward, act of standing up.
+{% include sidenote.html text="Chimps athletic. Humans weak. Why did weakness win? Starts with walking." %}
+The classic story of human origins, first sketched by Darwin, is a neat and satisfying causal chain: our ancestors stood up, which freed their hands from the business of locomotion. These newly liberated hands could then make and use tools, which in turn created an evolutionary pressure for bigger, cleverer brains to manage these new skills. It’s an elegant narrative, but as the fossil record has grown richer, it has become clear that this story has the sequence of events wrong. The first stone tools don't appear in the archaeological record until millions of years after our ancestors first became bipedal. For a vast stretch of our history, our ancestors were walking around on two legs, with their hands free, but doing very little with them that a chimp couldn't do. The trigger for bipedalism must have been something else—something more immediate and practical than a distant, unforeseen future of technology and civilization.
+{% include sidenote.html text="Old story: walk, then free hands, then tools, then big brain. Problem: timeline wrong. Tools appear much later. Need new reason for walking." %}
+The real impetus seems to have been a changing world. Between 10 and 5 million years ago, around the time the human and chimpanzee lineages diverged, the global climate was cooling. In Africa, this meant the vast, lush rainforests began to shrink, giving way to more open woodlands and savannas. For a fruit-eating ape, this was a disaster. The fruit that formed the core of their diet became scarcer, more dispersed, and more seasonal. This created a new and intense selective pressure: the need to travel longer distances between food sources, and the need to rely more heavily on "fallback foods"—tougher, lower-quality items like stems, bark, and leaves—when fruit was unavailable. The solution to this problem was not to become a better climber, but to become a better traveler on the ground. This is where the surprising biomechanics of walking come into play.
+{% include sidenote.html text="Climate cooled. Rainforests shrank. Fruit scarcer. Ancestors needed to travel farther for food. Ground travel became more important." %}
+One of the book’s most compelling points is just how inefficient other apes are at walking. When a chimpanzee walks on two legs, it lurches from side to side, its body a study in instability. It must walk with bent hips and bent knees, requiring constant, energy-draining muscle contractions just to keep from toppling over. Human walking, in contrast, is a model of efficiency. Our anatomy is built for it. Our S-shaped spine acts like a spring, positioning our torso directly above our hips for stability. The large, broad bones of our pelvis face sideways, not backward like in an ape, allowing muscles on the side of our hip to keep our upper body stable with each step, rather than letting it fall to one side. The result is that our skeleton, not our muscles, does most of the work. We essentially just fall forward, catching ourselves with each step. The energy savings are staggering: lab studies show that a chimpanzee uses four times as much energy to walk a given distance as a human does. For an early hominin in a world of dwindling resources, being able to travel four times as far on the same "tank of gas" would have been a monumental advantage. Bipedalism wasn't an adaptation for a future of tool use; it was a fuel-efficiency upgrade for the present.
+{% include sidenote.html text="Chimp walk costly. Bent-kneed, muscle-powered. Human walk cheap. Skeleton stacks, falls forward. Sideways pelvis, S-spine key. Huge energy savings." %}
+This story is not just a theory; it is written in the bones of our ancestors. The fossil known as "Ardi" (Ardipithecus ramidus), dating to about 4.4 million years ago, provides a remarkable snapshot of this transition in progress. Ardi’s skeleton is a mosaic of old and new. Her pelvis, though fragmented, shows the beginnings of the broad, sideways-facing shape needed for stable walking. Yet, her feet still had a divergent, grasping big toe, much like an ape's, indicating she was still an adept climber. She was a creature adapted for two worlds: capable of moving through the trees, but also capable of walking on the ground with a stability and efficiency a chimpanzee could never match. She was not lurching like a chimp, but she was not striding like a modern human either. Ardi embodies the intermediate step, a creature who became a biped not by giving up climbing, but by becoming better at walking when she had to.
+{% include sidenote.html text="Fossil 'Ardi' proves it. Pelvis adapted for bipedalism. Foot still had grasping toe for climbing. A transitional form for two worlds." %}
+But evolution is a story of trade-offs, and the shift to bipedalism, while solving one problem, created a host of others. These new challenges, in turn, became the selective pressures that shaped the next stages of our evolution. One of the most profound is the engineering problem of being a pregnant biped. In a four-legged mammal, the extra weight of a fetus is slung between the limbs, like cargo in a hammock. The animal’s center of gravity remains stable. For a biped, however, that extra weight is all out front, pulling the center of gravity forward, away from the base of support provided by the feet. This creates a constant risk of falling over and places immense shearing stress on the lower back as the vertebrae try to slide past one another. The solution, visible in the fossil record, was for females to evolve more wedge-shaped lumbar vertebrae than males, allowing for a more pronounced curve in the lower back to shift the center of mass back over the hips. This anatomical quirk, a direct consequence of being a pregnant biped, is a beautiful and painful illustration of evolutionary compromise, and the ultimate reason for the chronic lower back pain that afflicts so many human mothers.
+{% include sidenote.html text="Bipedalism created new problems. Pregnancy weight pulls forward, creating instability. Back must curve more. Stresses spine. Female vertebrae adapted, causing back pain." %}
+The downsides didn't stop there. By committing to walking, our ancestors surrendered the ability to gallop. They became slow and unstable, making them easy targets for the many predators of the African savanna. Giving up their powerful climbing arms and grasping feet also meant they were less agile in the trees, their only reliable escape route. This loss of speed and power, this embrace of being "athletically pathetic," was an enormous gamble. Yet it was this very vulnerability that set the stage for everything that followed. Being slow, weak, and ground-bound created a new, desperate need for solutions—for cooperation, for endurance running, for better communication, and, eventually, millions of years later, for the stone tools that Darwin had originally placed at the beginning of the story. Bipedalism was not the first step in a pre-ordained march toward humanity. It was an accidental, contingent, and risky adaptation to a changing climate, a path that, through a series of trade-offs and new challenges, inadvertently led to us.
 
 ================================================================================
 FILE: concatenate_repo.py
@@ -730,144 +1184,9 @@ def read_file_content(file_path):
     
     for encoding in encodings:
         try:
-            with open(file_path, 'r', encoding=encoding) as f:
-                return f.read()
-        except (UnicodeDecodeError, UnicodeError):
-            continue
-        except Exception as e:
-            return f"[ERROR: Could not read file - {str(e)}]"
-    
-    return "[ERROR: Could not decode file with any supported encoding]"
+            with ope
 
-def concatenate_repository(repo_path, output_file=None, max_file_size=50000):
-    """Main function to concatenate all repository files."""
-    repo_path = Path(repo_path).resolve()
-    
-    if not repo_path.exists():
-        print(f"Error: Repository path '{repo_path}' does not exist.")
-        return
-    
-    if not repo_path.is_dir():
-        print(f"Error: '{repo_path}' is not a directory.")
-        return
-    
-    # Determine output file
-    if output_file is None:
-        output_file = repo_path / "concatenated_repo.txt"
-    else:
-        output_file = Path(output_file)
-    
-    print(f"Scanning repository: {repo_path}")
-    print(f"Output file: {output_file}")
-    
-    files_processed = 0
-    files_skipped = 0
-    total_size = 0
-    
-    with open(output_file, 'w', encoding='utf-8') as out_f:
-        # Write header
-        out_f.write(f"REPOSITORY CONCATENATION\n")
-        out_f.write(f"========================\n")
-        out_f.write(f"Repository: {repo_path}\n")
-        out_f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-        out_f.write(f"Max file size limit: {max_file_size:,} characters\n\n")
-        
-        # Recursively walk through all files
-        for file_path in sorted(repo_path.rglob('*')):
-            # Skip if path should be ignored
-            relative_path = file_path.relative_to(repo_path)
-            
-            # Check if any part of the path should be ignored
-            should_skip = False
-            for part in relative_path.parts:
-                if part.lower() in IGNORE_DIRS or part.lower() in IGNORE_FILES:
-                    should_skip = True
-                    break
-            
-            if should_skip:
-                continue
-            
-            # Only process files
-            if not file_path.is_file():
-                continue
-            
-            # Only process text files
-            if not is_text_file(file_path):
-                files_skipped += 1
-                continue
-            
-            try:
-                # Get relative path for display
-                relative_path = file_path.relative_to(repo_path)
-                
-                # Read file content
-                content = read_file_content(file_path)
-                
-                # Check file size
-                if len(content) > max_file_size:
-                    content = content[:max_file_size] + f"\n\n[TRUNCATED - File too large, showing first {max_file_size:,} characters]"
-                
-                # Generate summary
-                summary = get_file_summary(relative_path)
-                
-                # Write file section
-                out_f.write("=" * 80 + "\n")
-                out_f.write(f"FILE: {relative_path}\n")
-                out_f.write(f"SUMMARY: {summary}\n")
-                out_f.write("=" * 80 + "\n\n")
-                out_f.write(content)
-                out_f.write("\n\n")
-                
-                files_processed += 1
-                total_size += len(content)
-                
-                # Progress indicator
-                if files_processed % 10 == 0:
-                    print(f"Processed {files_processed} files...")
-                    
-            except Exception as e:
-                print(f"Error processing {file_path}: {str(e)}")
-                files_skipped += 1
-        
-        # Write footer
-        out_f.write("=" * 80 + "\n")
-        out_f.write("CONCATENATION COMPLETE\n")
-        out_f.write("=" * 80 + "\n")
-        out_f.write(f"Files processed: {files_processed}\n")
-        out_f.write(f"Files skipped: {files_skipped}\n")
-        out_f.write(f"Total content size: {total_size:,} characters\n")
-    
-    print(f"\nConcatenation complete!")
-    print(f"Files processed: {files_processed}")
-    print(f"Files skipped: {files_skipped}")
-    print(f"Output saved to: {output_file}")
-    print(f"Total size: {total_size:,} characters")
-
-def main():
-    parser = argparse.ArgumentParser(
-        description="Concatenate all text files in a repository for AI context sharing"
-    )
-    parser.add_argument(
-        "repo_path", 
-        help="Path to the repository directory"
-    )
-    parser.add_argument(
-        "-o", "--output", 
-        help="Output file path (default: auto-generated in repo directory)"
-    )
-    parser.add_argument(
-        "--max-size", 
-        type=int, 
-        default=50000,
-        help="Maximum file size in characters before truncation (default: 50000)"
-    )
-    
-    args = parser.parse_args()
-    
-    concatenate_repository(args.repo_path, args.output, args.max_size)
-
-if __name__ == "__main__":
-    main()
+[TRUNCATED - File too large, showing first 50,000 characters]
 
 ================================================================================
 FILE: generate_concat.bat
@@ -905,11 +1224,9 @@ On mobile devices, a two-column layout doesn't work well. Our CSS includes a spe
 Here you can find summaries and notes on various books.
 {% include sidenote.html text="Reading List" %}
 
-<p>
-  <ul>
-    <li><a href="{% link books/lieberman.md %}">Summary of "The Story of the Human Body"</a></li>
-  </ul>
-</p>
+<ul>
+  <li><a href="books/lieberman_2013/lieberman.html">Summary of "The Story of the Human Body"</a></li>
+</ul>
 
 
 ================================================================================
@@ -923,6 +1240,6 @@ Site is live at https://danielkerschke.github.io/summ-pages/
 ================================================================================
 CONCATENATION COMPLETE
 ================================================================================
-Files processed: 9
-Files skipped: 0
-Total content size: 41,123 characters
+Files processed: 11
+Files skipped: 1
+Total content size: 104,538 characters

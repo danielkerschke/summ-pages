@@ -33,8 +33,8 @@ body {
 
 /* --- SIDENOTE LAYOUT CSS --- */
 
-// 1. The main grid container. Use dense auto‑placement so sidenotes fill
-//    the left column on the same row as their paragraphs.
+// 1. The main grid container. Use dense auto‑placement so sidenotes
+//    fill the left column on the same row as their paragraphs.
 .content-with-sidenotes {
   display: grid;
   grid-template-columns: 200px 1fr;
@@ -43,10 +43,8 @@ body {
   grid-auto-flow: row dense;
 }
 
-// 2. Place all headings across BOTH columns.
-.content-with-sidenotes > h1,
-.content-with-sidenotes > h2,
-.content-with-sidenotes > h3 {
+// 2. All non‑paragraph elements (headings, lists, etc.) span both columns.
+.content-with-sidenotes > :not(p):not(.sidenote) {
   grid-column: 1 / -1;
   margin: 0;
 }
@@ -58,8 +56,8 @@ body {
   margin: 1rem 0;
 }
 
-// 4. Style the sidenote itself. Remove default margin, center it vertically
-//    within its grid cell, then nudge it down slightly with margin-top.
+// 4. Style the sidenote itself. Remove default margin and center the note
+//    vertically within its grid cell.
 .sidenote {
   grid-column: 1;
   text-align: right;
@@ -68,7 +66,6 @@ body {
   color: #555;
   margin: 0;
   align-self: center;
-  margin-top: 0.2em;
 }
 
 /* --- RESPONSIVE STYLING FOR MOBILE --- */

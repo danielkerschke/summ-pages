@@ -3,8 +3,7 @@ layout: default
 title: "The Story of the Human Body"
 ---
 
-Lieberman, D. E. (2013). *The story of the human body: Evolution, health, and disease.* Pantheon Books.
-
+# Lieberman, D. E. (2013). *The story of the human body: Evolution, health, and disease.* Pantheon Books.
 
 This book begins with a puzzle. We live in paradoxical times for our bodies. On one hand, this is likely the healthiest era in human history. In many parts of the world, diseases that once killed in droves—smallpox, the plague, polio—have been conquered or quelled. We can reasonably expect our children to survive to adulthood, and for us to live into our dotage. Formerly life-threatening conditions like a broken leg or appendicitis are now easily remedied. Yet, on the other hand, we could be doing much better. A wave of chronic, preventable illnesses is sweeping the globe. These are not the ancient infectious scourges, but modern ailments: type 2 diabetes, heart disease, certain cancers, osteoporosis, but also a host of less deadly but debilitating troubles like lower back pain, anxiety, and myopia. These aren't just diseases of old age; they are increasingly appearing in middle-aged people. How can our time be both a golden age for health and a burgeoning crisis of chronic disease?
 
@@ -39,31 +38,27 @@ This sets up the book's central argument: we are caught in a feedback loop, a dy
 
 ## PART I - Apes and Humans
 
-This part of the book considers the first several million years of our lineage, tracing the major biological transformations that turned an ape-like ancestor into the hunter-gatherers of the genus Homo.
+This part of the book considers the first several million years of our lineage, tracing the major biological transformations that turned an ape‑like ancestor into the hunter‑gatherers of the genus *Homo*.
 
-<ul>
-  <li><a href="books/lieberman_2013/lieberman1.html">Lieberman, D. E. (2013). Ch. 2 - *Upstanding Apes. In The Story of the Human Body: Evolution, Health, and Disease.* Pantheon Books.</a></li>
-</ul>
+### [2 - Upstanding Apes](lieberman_2013/lieberman1.html)
 
-### [[Lieberman, D. E. (2013). 2 - Upstanding Apes. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
-
-This chapter explores the first and arguably most fundamental transition in human evolution—the shift to bipedalism. It examines the fossil evidence from our earliest ancestors, such as Ardipithecus ramidus ("Ardi"), to understand the anatomical changes in the feet, hips, and spine that made walking on two legs possible. The central argument is that bipedalism was not an end in itself but an adaptation that allowed early hominins to forage more efficiently over longer distances as Africa's climate changed and forests gave way to woodlands.
+This chapter explores the first and arguably most fundamental transition in human evolution—the shift to bipedalism. It examines the fossil evidence from our earliest ancestors, such as *Ardipithecus ramidus* ("Ardi"), to understand the anatomical changes in the feet, hips, and spine that made walking on two legs possible. The central argument is that bipedalism was not an end in itself but an adaptation that allowed early hominins to forage more efficiently over longer distances as Africa's climate changed and forests gave way to woodlands.
 
 ### [[Lieberman, D. E. (2013). 3 - Much Depends on Dinner. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
 
-With our ancestors now walking upright, this chapter focuses on the next major evolutionary driver—diet. It introduces the australopiths, including the famous fossil "Lucy." The core of this chapter argues that as preferred foods like fruit became less available, our ancestors evolved crucial adaptations for eating tough, hard-to-chew "fallback foods" like roots and tubers. This shift is visible in their skeletons, which feature enormous, flat cheek teeth, powerful jaws, and massive chewing muscles designed for grinding fibrous plant matter.
+With our ancestors now walking upright, this chapter focuses on the next major evolutionary driver—diet. It introduces the australopiths, including the famous fossil "Lucy." The core of this chapter argues that as preferred foods like fruit became less available, our ancestors evolved crucial adaptations for eating tough, hard‑to‑chew "fallback foods" like roots and tubers. This shift is visible in their skeletons, which feature enormous, flat cheek teeth, powerful jaws, and massive chewing muscles designed for grinding fibrous plant matter.
 
-### [[Lieberman, D. E. (2013). 4 - The First Hunter-Gatherers. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+### [[Lieberman, D. E. (2013). 4 - The First Hunter‑Gatherers. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
 
-This chapter describes the third major transformation—the emergence of the genus Homo and the development of a nearly modern human body. It focuses on Homo erectus, an ancestor with long legs, short arms, arched feet, and a large brain. The argument is that this new body plan was an integrated suite of adaptations for a hunter-gatherer lifestyle, which involved not just gathering plants but also acquiring meat through endurance running, cooperation, and the use of the first simple stone tools.
+This chapter describes the third major transformation—the emergence of the genus *Homo* and the development of a nearly modern human body. It focuses on *Homo erectus*, an ancestor with long legs, short arms, arched feet, and a large brain. The argument is that this new body plan was an integrated suite of adaptations for a hunter‑gatherer lifestyle, which involved not just gathering plants but also acquiring meat through endurance running, cooperation, and the use of the first simple stone tools.
 
 ### [[Lieberman, D. E. (2013). 5 - Energy in the Ice Age. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
 
-Here, the book explores the profound energetic consequences of the hunter-gatherer lifestyle. The higher-quality diet, rich in meat and processed with tools, provided more energy. This surplus fueled a crucial evolutionary trade-off—a smaller gut in exchange for a much larger, more metabolically expensive brain. This shift also created a new human life strategy involving a long, slow childhood and the ability to store more body fat to support brain development and reproductive success in the unpredictable world of the Ice Age.
+Here, the book explores the profound energetic consequences of the hunter‑gatherer lifestyle. The higher‑quality diet, rich in meat and processed with tools, provided more energy. This surplus fueled a crucial evolutionary trade‑off—a smaller gut in exchange for a much larger, more metabolically expensive brain. This shift also created a new human life strategy involving a long, slow childhood and the ability to store more body fat to support brain development and reproductive success in the unpredictable world of the Ice Age.
 
 ### [[Lieberman, D. E. (2013). 6 - A Very Cultured Species. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
 
-This chapter covers the final biological transition—the origin of our own species, Homo sapiens. While anatomical changes like a globular skull and a smaller face are important, the key argument is that what truly made us "modern" was our unprecedented capacity for culture, language, and symbolic thought. This "software" revolution, more than any physical "hardware" change, allowed early modern humans to innovate, cooperate, and adapt with extraordinary speed, ultimately enabling them to colonize the entire planet.
+This chapter covers the final biological transition—the origin of our own species, *Homo sapiens*. While anatomical changes like a globular skull and a smaller face are important, the key argument is that what truly made us "modern" was our unprecedented capacity for culture, language, and symbolic thought. This "software" revolution, more than any physical "hardware" change, allowed early modern humans to innovate, cooperate, and adapt with extraordinary speed, ultimately enabling them to colonize the entire planet.
 
 ---
 
@@ -73,15 +68,15 @@ This section shifts focus from biological evolution to cultural evolution, analy
 
 ### [[Lieberman, D. E. (2013). 7 - Progress, Mismatch, and Dysevolution. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
 
-This chapter bridges the book's two halves by outlining the consequences of having Paleolithic bodies in a post-Paleolithic world. It fully develops the concepts of evolutionary mismatch and introduces "dysevolution." Dysevolution is presented as a pernicious feedback loop where cultural innovations are used to treat the symptoms of mismatch diseases rather than their environmental causes, thereby allowing the diseases to persist or even worsen across generations.
+This chapter bridges the book's two halves by outlining the consequences of having Paleolithic bodies in a post‑Paleolithic world. It fully develops the concepts of evolutionary mismatch and introduces "dysevolution." Dysevolution is presented as a pernicious feedback loop where cultural innovations are used to treat the symptoms of mismatch diseases rather than their environmental causes, thereby allowing the diseases to persist or even worsen across generations.
 
 ### [[Lieberman, D. E. (2013). 8 - Paradise Lost?. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
 
-The Agricultural Revolution is framed here not as a straightforward step forward but as a "colossal mistake" from the perspective of individual health. While farming produced more food and fueled population growth, it also led to a cascade of mismatch diseases. The argument is that the shift to a low-variety, starchy diet caused nutritional deficiencies and cavities, while sedentary village life and proximity to livestock unleashed waves of infectious diseases and famines.
+The Agricultural Revolution is framed here not as a straightforward step forward but as a "colossal mistake" from the perspective of individual health. While farming produced more food and fueled population growth, it also led to a cascade of mismatch diseases. The argument is that the shift to a low‑variety, starchy diet caused nutritional deficiencies and cavities, while sedentary village life and proximity to livestock unleashed waves of infectious diseases and famines.
 
 ### [[Lieberman, D. E. (2013). 9 - Modern Times, Modern Bodies. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
 
-This chapter explores the paradox of health in the industrial era. On one hand, scientific and sanitation advances solved many of the infectious diseases of the agricultural era, leading to longer lives. On the other hand, the Industrial Revolution created a new set of mismatches by drastically reducing physical labor and introducing highly processed, energy-dense foods, setting the stage for the modern epidemic of chronic, non-communicable diseases.
+This chapter explores the paradox of health in the industrial era. On one hand, scientific and sanitation advances solved many of the infectious diseases of the agricultural era, leading to longer lives. On the other hand, the Industrial Revolution created a new set of mismatches by drastically reducing physical labor and introducing highly processed, energy‑dense foods, setting the stage for the modern epidemic of chronic, non‑communicable diseases.
 
 ---
 
@@ -91,11 +86,11 @@ The final part of the book applies an evolutionary lens to the most pressing hea
 
 ### [[Lieberman, D. E. (2013). 10 - The Vicious Circle of Too Much. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
 
-This chapter focuses on the quintessential diseases of affluence, which are caused by an excess of energy. It explains the metabolic processes behind obesity, particularly the storage of visceral (belly) fat. The core argument is that modern diets, loaded with rapidly digested sugars and refined carbohydrates, overwhelm our ancient metabolic systems, leading to insulin resistance, type 2 diabetes, heart disease, and other chronic conditions caught in a dysevolutionary cycle.
+This chapter focuses on the quintessential diseases of affluence, which are caused by an excess of energy. It explains the metabolic processes behind obesity, particularly the storage of visceral (belly) fat. The core argument is that modern diets, loaded with rapidly digested sugars and refined carbohydrates, overwhelm our ancient metabolic systems, leading to insulin resistance, type 2 diabetes, heart disease, and other chronic conditions caught in a dysevolutionary cycle.
 
 ### [[Lieberman, D. E. (2013). 11 - Disuse. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
 
-Here, the book examines the opposite problem—diseases that arise from too little of the stimuli our bodies evolved to expect. It explains that our skeletons, muscles, and even our immune systems require physical stress and microbial exposure to develop and maintain proper function. The chapter argues that modern inactivity and hyper-hygienic lifestyles contribute to diseases of disuse like osteoporosis, weak feet, and a rise in allergies and autoimmune disorders.
+Here, the book examines the opposite problem—diseases that arise from too little of the stimuli our bodies evolved to expect. It explains that our skeletons, muscles, and even our immune systems require physical stress and microbial exposure to develop and maintain proper function. The chapter argues that modern inactivity and hyper‑hygienic lifestyles contribute to diseases of disuse like osteoporosis, weak feet, and a rise in allergies and autoimmune disorders.
 
 ### [[Lieberman, D. E. (2013). 12 - The Hidden Dangers of Novelty and Comfort. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
 
