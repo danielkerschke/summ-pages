@@ -44,11 +44,11 @@ This part of the book considers the first several million years of our lineage, 
 
 This chapter explores the first and arguably most fundamental transition in human evolution—the shift to bipedalism. It examines the fossil evidence from our earliest ancestors, such as *Ardipithecus ramidus* ("Ardi"), to understand the anatomical changes in the feet, hips, and spine that made walking on two legs possible. The central argument is that bipedalism was not an end in itself but an adaptation that allowed early hominins to forage more efficiently over longer distances as Africa's climate changed and forests gave way to woodlands.
 
-### [[Lieberman, D. E. (2013). 3 - Much Depends on Dinner. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+### [Lieberman, D. E. (2013). Ch. 3 - *Much Depends on Dinner.* In *The Story of the Human Body- Evolution, Health, and Disease.* Pantheon Books.](lieberman2.html)
 
-With our ancestors now walking upright, this chapter focuses on the next major evolutionary driver—diet. It introduces the australopiths, including the famous fossil "Lucy." The core of this chapter argues that as preferred foods like fruit became less available, our ancestors evolved crucial adaptations for eating tough, hard‑to‑chew "fallback foods" like roots and tubers. This shift is visible in their skeletons, which feature enormous, flat cheek teeth, powerful jaws, and massive chewing muscles designed for grinding fibrous plant matter.
+With our ancestors now walking upright, this chapter focuses on the next major evolutionary driver—diet. It introduces the australopiths, including the famous fossil "Lucy." The core of this chapter argues that as preferred foods like fruit became less available, our ancestors evolved crucial adaptations for eating tough, hard-to-chew "fallback foods" like roots and tubers. This shift is visible in their skeletons, which feature enormous, flat cheek teeth, powerful jaws, and massive chewing muscles designed for grinding fibrous plant matter.
 
-### [[Lieberman, D. E. (2013). 4 - The First Hunter‑Gatherers. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
+### [Lieberman, D. E. (2013). Ch. 4 - *The First Hunter-Gatherers.* In *The Story of the Human Body- Evolution, Health, and Disease.* Pantheon Books.](lieberman3.html)
 
 This chapter describes the third major transformation—the emergence of the genus *Homo* and the development of a nearly modern human body. It focuses on *Homo erectus*, an ancestor with long legs, short arms, arched feet, and a large brain. The argument is that this new body plan was an integrated suite of adaptations for a hunter‑gatherer lifestyle, which involved not just gathering plants but also acquiring meat through endurance running, cooperation, and the use of the first simple stone tools.
 

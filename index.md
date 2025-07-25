@@ -20,5 +20,5 @@ Here you can find summaries and notes on various books.
 {% include sidenote.html text="Reading List" %}
 
 <ul>
-  <li><a href="books/lieberman_2013/lieberman.html">Summary of "The Story of the Human Body"</a></li>
+  <li><a href="books/lieberman_2013/lieberman.html">Lieberman, D. E. (2013). *The story of the human body: Evolution, health, and disease.* Pantheon Books.</a></li>
 </ul>
