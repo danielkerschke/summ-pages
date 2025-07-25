@@ -3,7 +3,8 @@ layout: default
 title: "The Story of the Human Body"
 ---
 
-# Lieberman, D. E. (2013). *The story of the human body: Evolution, health, and disease.* Pantheon Books.
+Lieberman, D. E. (2013). *The story of the human body: Evolution, health, and disease.* Pantheon Books.
+
 
 This book begins with a puzzle. We live in paradoxical times for our bodies. On one hand, this is likely the healthiest era in human history. In many parts of the world, diseases that once killed in droves—smallpox, the plague, polio—have been conquered or quelled. We can reasonably expect our children to survive to adulthood, and for us to live into our dotage. Formerly life-threatening conditions like a broken leg or appendicitis are now easily remedied. Yet, on the other hand, we could be doing much better. A wave of chronic, preventable illnesses is sweeping the globe. These are not the ancient infectious scourges, but modern ailments: type 2 diabetes, heart disease, certain cancers, osteoporosis, but also a host of less deadly but debilitating troubles like lower back pain, anxiety, and myopia. These aren't just diseases of old age; they are increasingly appearing in middle-aged people. How can our time be both a golden age for health and a burgeoning crisis of chronic disease?
 
@@ -39,6 +40,10 @@ This sets up the book's central argument: we are caught in a feedback loop, a dy
 ## PART I - Apes and Humans
 
 This part of the book considers the first several million years of our lineage, tracing the major biological transformations that turned an ape-like ancestor into the hunter-gatherers of the genus Homo.
+
+<ul>
+  <li><a href="books/lieberman_2013/lieberman1.html">Lieberman, D. E. (2013). Ch. 2 - *Upstanding Apes. In The Story of the Human Body: Evolution, Health, and Disease.* Pantheon Books.</a></li>
+</ul>
 
 ### [[Lieberman, D. E. (2013). 2 - Upstanding Apes. In The Story of the Human Body- Evolution, Health, and Disease. Pantheon Books.]]
 
