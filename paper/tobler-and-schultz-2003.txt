@@ -1,0 +1,9 @@
+Fiorillo, C. D., Tobler, P. N., & Schultz, W. (2003). Discrete coding of reward probability and uncertainty by dopamine neurons. Science, 299(5614), 1898–1902. https://doi.org/10.1126/science.1077349
+
+Monkeys were shown a visual cue that predicted a liquid reward with a specific probability (e.g., a circle meant P=0.25, a square meant P=0.5, a triangle meant P=0.75). After the cue appeared, there was a fixed, predictable delay period where the monkey just had to wait. Then, either the reward was delivered or it wasn't. They recorded directly from dopamine neurons during this whole process. The dopamine response was exactly what an "uncertainty" model would predict. For P=0 (no reward) and P=1.0 (certain reward), the initial dopamine response was low. For P=0.5 (maximum uncertainty), the initial dopamine response was highest. This showed dopamine encodes uncertainty.
+
+-- My model predicts a flat signal during this delay, doesn't it? I don't understand the result. It's common knowledge that dopamine migrates entirely onto the cues, so it should already be released in near-full at the beginning of the delay period. Is there evidence about how great the ramp-up during the delay is, in comparison to other dopamine jumps/bursts? 
+
+This ramp is not about the initial surprise of the cue, but about the anticipation and uncertainty during the wait. It's a signal that says, "Something important might happen soon, and the closer we get to that moment, the more uncertain the outcome feels."
+
+-- To me, that sounds like a "ready to consume" kind of atentionthat isn't really relevant to anything. Also, how can it ramp up? Ramp up towards what? That kind of presupposes that the process of dopamine migration onto cues hasn't even concluded yet. I think that wasn't even known back then.

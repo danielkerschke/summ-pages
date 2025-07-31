@@ -1,0 +1,19 @@
+ A Neural Signature
+ of Hierarchical Reinforcement Learning
+ Jose´ J.F. Ribas-Fernandes,1,2 Alec Solway,1 Carlos Diuk,1 Joseph T. McGuire,3 Andrew G. Barto,4 Yael Niv,1,5
+ and Matthew M. Botvinick1,5,
+
+
+Follow-up to: [[botvinick-et-al-2008]] 
+
+In standard reinforcement learning, the brain learns by tracking progress toward a final goal, generating a "reward prediction error" signal when an outcome is better or worse than expected. The key idea of HRL is that the brain also sets up intermediate subgoals (like picking up a package on the way to a destination) and generates a special kind of "pseudo-reward" signal upon completing them. This creates a distinct error signal that tracks progress toward a subgoal, even if that subgoal itself isn't the final reward.
+
+To test for this "subgoal error signal," the researchers designed a simple video game where participants had to guide a truck to a package (the subgoal) and then to a house (the final goal). The clever part of the experiment was that sometimes, the package would unexpectedly jump to a new location. Crucially, some jumps were designed so that the distance to the package changed, but the total distance to the final house remained exactly the same. According to standard learning theories, this event shouldn't trigger an error signal because progress toward the ultimate goal is unaffected. However, the HRL framework uniquely predicts that the brain should generate an error signal because progress toward the immediate subgoal has changed.
+
+Using EEG and fMRI brain imaging, the researchers found precisely the evidence they were looking for. When the package jumped farther away (making the subgoal harder) or closer (making it easier), participants' brains produced a distinct error signal in regions known to be involved in reward processing. This occurred even when the overall task length was unchanged. This finding provides the first direct "neural signature" of hierarchical reinforcement learning in the brain, suggesting that our ability to handle complex tasks relies on a system that not only tracks the ultimate prize but also actively monitors and evaluates our progress through the sequence of smaller steps we set for ourselves along the way.
+
+-- *What role did dopamine play in this intermediate reward? According to the ramp theory, it should be proportional to how much closer the intermediate subgoal moved you towards the goal, in terms of expectation. It's the process of resolving expectation towards either 1 or 0. (Will go forward with the assumption that dopamine is responsible, show it's got parsimony.)*
+
+That it's dopamine is actually their working theory. While this study couldn't measure dopamine directly, its findings provide strong indirect evidence that the subgoal error signal is indeed carried by the dopamine system. For negative errors (when the subgoal became harder to reach), they found activity in the anterior cingulate cortex (ACC) and the habenula. The paper notes that "ACC activity in association with negative RPEs has been proposed to reflect phasic reductions in dopaminergic input," and that "the habenula has been proposed to provide suppressive input to midbrain dopaminergic nuclei," which are the brain's main dopamine factories. For positive errors (when the subgoal became easier), they observed activity in the nucleus accumbens (NAcc), another key area in the reward circuit. By finding these specific neural responses, the study "provides tentative, indirect support for dopaminergic involvement in HRL."
+
+

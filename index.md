@@ -17,6 +17,9 @@ On mobile devices, a two-column layout doesn't work well. Our CSS includes a spe
 ## Book Notes
 
 Here you can find summaries and notes on various books.
+
+“I don’t want to say no book is ever worth reading, but I actually do believe something pretty close to that. I think, if you wrote a book, you fucked up, and it should have been a six-paragraph blog post.” - Sam Bankman-Fried
+
 {% include sidenote.html text="Reading List" %}
 
 <ul>

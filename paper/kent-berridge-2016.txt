@@ -1,0 +1,9 @@
+Berridge KC, Robinson TE. Liking, wanting, and the incentive-sensitization theory of addiction. Am Psychol. 2016 Nov;71(8):670-679. doi: 10.1037/amp0000059. PMID: 27977239; PMCID: PMC5171207.
+
+Why does something like a drug "cycle" wanting so much, summon it repeatedly, despite not giving benefits anymore?
+
+First, it's crucial to understand a key discovery outlined in the paper: the pleasure you get from something ("liking") and your motivation to get it ("wanting") are controlled by two different systems in the brain. "Liking" is the actual feeling of enjoyment, like the pleasant taste of a sweet food. This is managed by small, fragile clusters of neurons. "Wanting," on the other hand, is the powerful motivational urge or craving that makes you seek something out. This desire is driven by a much larger, more robust, and more powerful brain system fueled by the chemical dopamine.
+
+A common myth is that dopamine causes pleasure. As the research shows, this isn't true. Dopamine's real job is to create motivation and desire. It assigns "incentive salience" to things, which means it makes your brain tag certain things and their associated cues as important, attention-grabbing, and desirable. When your dopamine system is active, it doesn't necessarily mean you are feeling pleasure; it means you are feeling a strong, compelling urge to pursue a goal, whether it's food, a person, or a drug.
+
+The core of the problem lies in a process called neural sensitization. Repeated use of addictive drugs fundamentally changes the brain's "wanting" circuitry, making it hypersensitive to the effects of the drug and, even more importantly, to the cues associated with it. Think of it as permanently turning up the volume on your "wanting" system. Crucially, this sensitization happens only to the dopamine-driven "wanting" system. The smaller "liking" system does not get sensitized; in fact, with tolerance, the pleasure from the drug often decreases over time.

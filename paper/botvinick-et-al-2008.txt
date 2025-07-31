@@ -1,0 +1,11 @@
+Hierarchically organized behavior and its neural foundations:
+ A reinforcement learning perspective
+ Matthew M. Botvinicka,*, Yael Niva, Andrew C. Bartob
+
+
+
+Think about making a cup of coffee. It's not one action, but a sequence of smaller ones: get a cup, get the coffee, scoop it, pour water, etc. The authors explain that standard computational models of learning, known as Reinforcement Learning (RL), struggle with such long sequences. These basic models learn by trial and error, but when a task has too many steps, the number of possible choices becomes overwhelming, making learning impossibly slow. This "scaling problem" suggests that our brains must use a more efficient strategy than learning every tiny step from scratch.
+
+The authors propose that the solution lies in hierarchy, a concept formalized in Hierarchical Reinforcement Learning (HRL). Instead of learning a long, flat sequence of actions, HRL allows an agent to group related actions into a single "skill" or "subroutine" (which the paper calls an "option"). For example, the brain wouldn't learn "get spoon, scoop sugar, move to cup, tip spoon" as separate steps. Instead, it would bundle them into one reusable skill: "add sugar." This transforms a complex problem with many small decisions into a simpler one with a few high-level choices (e.g., "make coffee," which is composed of "add coffee," "add water," and "add sugar"). This "chunking" of behavior makes learning and planning vastly more efficient.
+
+-- Right, it's better to decide on a few salient functional abstractions, such as "making coffee," rather than having only meaningless marginal actions that tell you nothing about how they contribute towards the goal. And those large, salient actions, you can also try randomly I suppose.
