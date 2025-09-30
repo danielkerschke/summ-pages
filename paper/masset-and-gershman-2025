@@ -1,0 +1,23 @@
+Masset, P., & Gershman, S. J. (2025). Reinforcement learning with dopamine: A convergence of natural and artificial intelligence. In Handbook of behavioral neuroscience (Vol. 32, pp. 305-318). Elsevier. https://doi.org/10.1016/B978-0-443-29867-7.00019-0
+
+The point of this paper is to reviwe how intelligence, whether natural or artificial, often lands on the same clever tricks to learn and thrive.
+
+---
+
+Imagine you're teaching a robot or an animal how to get better at finding rewards, like treats or points in a game. That's basically what reinforcement learning (RL) is all about—figuring out how to predict and chase long-term goodies through trial and error. This idea comes from old studies on animals learning behaviors, like Pavlov's dogs salivating at a bell before food arrives. In the brain, a chemical called dopamine plays a starring role, acting like a "surprise signal" when rewards are better or worse than expected.
+
+The core challenge in RL is maximizing your total rewards over time, not just grabbing the quick or salient ones. Think of it like saving money: you want the biggest pile in the long run, even if it means waiting; and more money is always better. Rewards can be random, like a slot machine, so the system calculates an "expected return"—a smart guess at future payoffs. To make this workable, RL assumes the world is broken into "states," like positions on a game board, where each state helps predict what's next without needing the whole history.
+
+A key tool in RL is the temporal difference (TD) algorithm, which is like a coach giving feedback during practice. It compares what you expected to happen with what actually did, creating an "error signal" to tweak your predictions. If something good surprises you, bump up your expectations; if it's a letdown, dial them down. This helps build a "value function," estimating how good each state is, and a "policy," deciding what action to take next.
+
+In the brain, this TD error matches how dopamine works. Dopamine neurons fire more when rewards are unexpectedly good (like finding extra candy) and less when they're missing (like expecting candy but getting none). Over time, this signal shifts to cues predicting rewards, teaching the brain to anticipate. It's why the same math that powers AI game-playing bots also explains animal learning—nature and tech converged on similar smart solutions.
+
+But real life isn't always straightforward; sometimes you can't see the full picture, like guessing if it's raining outside from a foggy window. This "partial observability" means the brain uses "belief states"—probabilities about what's really going on based on clues. Dopamine responds to these beliefs, getting more excited when uncertainty resolves in a good way, like confirming a hunch about hidden treasure.
+
+Modern AI takes RL further by not just predicting average rewards but the whole spread of possibilities, like knowing a gamble could win big or lose big. This "distributional RL" helps handle risk, and **dopamine neurons actually show similar variety**—some are optimistic, firing for potential upsides, others pessimistic for downsides. It's like having a team of advisors giving nuanced advice instead of one average opinion. Each dopamine neuron says whether the reward it is associated with could occur.
+
+Another twist is learning at different speeds or "timescales." Humans and animals discount future rewards differently—wanting stuff now but planning long-term too. Dopamine neurons vary in how far ahead they "look," some focusing on quick wins, others on distant goals. AI mixes these to mimic flexible human choices, like saving for retirement while enjoying a treat today.
+
+RL can also predict more than just rewards; it can forecast visits to places or features, called the "successor representation." It's like a mental map saying, "From here, you're likely to end up there next." Dopamine might signal errors in these broader predictions, not just cash or food, explaining why it reacts to surprises in sounds, sights, or even social cues.
+
+The brain's "features"—building blocks for these predictions—are learned too, shaped by experience. Time, for example, isn't a rigid clock; it's fuzzy, with dopamine tweaking how we represent seconds or minutes. AI has shifted to deep networks that auto-learn features, and the brain might do something similar, with dopamine guiding upstream areas to refine what they notice.
