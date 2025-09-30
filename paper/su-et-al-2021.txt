@@ -1,0 +1,4 @@
+"VTA showed significant positive activation in response to the PV, but not to the GV, and the difference between the two conditions was statistically significant." (Section 3.5, Page 5)
+
+"The fMRI results showed higher brain activations in sub-components of the default mode network (DMN)... when viewing personalized videos in contrast to non-personalized ones." (Abstract, Page 1)
+"The dMPFC subsystem of DMN... [was] more active under the PV condition than under the GV condition." (Discussion, Pages 5 & 6)

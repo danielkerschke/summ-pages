@@ -1,0 +1,5 @@
+Silberstein, R. B., Pipingas, A., Farrow, M., Levy, F., & Stough, C. K. (2016). Dopaminergic modulation of default mode network brain functional connectivity in attention deficit hyperactivity disorder. Brain and Behavior, 6(6), e00582. https://doi.org/10.1002/brb3.582
+
+This study investigated brain activity in boys with ADHD and found that a brain network associated with daydreaming, the default mode network (DMN), was overly active when they were supposed to be concentrating on a task. Normally, this network quiets down to allow for focus, but in boys with ADHD, the increased connectivity within this network was linked to slower individual reaction times. These findings suggest that an inability to suppress this internal "daydreaming" activity is a key neural feature of the attention difficulties seen in ADHD.
+
+-- Having an overactive = well-developed DMN literally is a symptom of ADHD. This is surely a different topic entirely.
